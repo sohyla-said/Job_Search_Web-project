@@ -1,34 +1,48 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    </head>
+</head>
 
-    <body>
-        <form action="">
-            <label for="user">Location</label>
-            <input id="user" type="text" name="" id="">
-            <br>
-<br>
-            <label for="user">Created</label>
-            <input type="text">
-            <br><br>
-            <label for="user">Salary</label>
-            <input id="" type="text" name="">
-            <br><br>
-            <label for="user">Years of Experience</label>
-            <input id="" type="number" name="number" min="0" max="50" step="1">
-            <br><br>
-            <label for="user">Job Description</label>
-            <textarea name="" id="" cols="50" rows="5" placeholder="">
+<body>
+    <h2>Edit Job Details</h2>
+
+    <form action="">
+        <label for="user">Job ID:</label><br>
+        <input id="" type="number" name="number" min="" max="" step="1">
+        <br><br>
+        <label for="user">Job Title:</label><br>
+        <input id="" type="text" name="">
+        <br><br>
+        <label for="user">Salary:</label><br>
+        <input type="number" id="salary" min="1" name="salary">
+        <br><br>
+        <label for="company_name">Company Name:</label><br>
+        <input type="text" id="" name="">
+        <br><br>
+        <label for="job_status">Job Status:</label><br>
+        <input type="radio" id="job_status_opened" name="job_status" value="opened">
+        <label for="job_status_opened">Opened</label><br>
+        <input type="radio" id="job_status_closed" name="job_status" value="closed">
+        <label for="job_status_closed">Closed</label>
+
+        <!-- <br><br>
+        <label for="user">Location:</label><br>
+        <input id="user" type="text" name="" id=""> -->
+        <br><br>
+        <label for="user">Years of Experience:</label><br>
+        <input id="" type="text" name="">
+        <br><br>
+        <label for="user">Job Description:</label><br>
+        <textarea name="" id="" placeholder="">
         </textarea>
-            <br><br>
-            <button type="submit">Edit</button>
-            <button type="reset">Reset</button>
-        </form>
-    </body>
+        <br><br>
+        <button type="submit">Edit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
 
 </html>
