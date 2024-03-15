@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+
+    <body>
+        <form action="">
+            <label for="user">Location</label>
+            <input id="user" type="text" name="" id="">
+            <br>
+<br>
+            <label for="user">Created</label>
+            <input type="text">
+            <br><br>
+            <label for="user">Salary</label>
+            <input id="" type="text" name="">
+            <br><br>
+            <label for="user">Years of Experience</label>
+            <input id="" type="number" name="number" min="0" max="50" step="1">
+            <br><br>
+            <label for="user">Job Description</label>
+            <textarea name="" id="" cols="50" rows="5" placeholder="">
+        </textarea>
+            <br><br>
+            <button type="submit">Edit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+
+</html>
