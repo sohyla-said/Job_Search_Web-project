@@ -7,7 +7,7 @@
 <body>
   <h1>Sign Up</h1>
   <h2>Company Admin/User</h2>
-  <form method="post" action="signup.html">
+  <form method="post" action="viewlist.html">
     Username:<input type="text" size="15" maxlength="40" name="username">
     <br/><br/>
     Password: <input type="password" size="15" maxlength="30" name="password">
@@ -16,11 +16,14 @@
     <input type="password" size="15" maxlength="30" name="confirm_password">
     <br/><br/>
     Email: <input type="email" size="20" maxlength="40" name="email">
-    <br/><br/>
+    <br/><b/>
+    Are you a user?
+    <input type="checkbox" id="is_user" name="user_type" value="user">
+    <br/>
     Are you a company admin?
     <input type="checkbox" id="is_company_admin" name="is_company_admin" value="true">
-    <br/>
-      Company Name:<input type="text" name="company_name" disabled>
+    <br/><br/>
+    Company Name:<input type="text" name="company_name" disabled>
     <br/><br/>
     <input type="submit" value="Sign Up">
   </form>
