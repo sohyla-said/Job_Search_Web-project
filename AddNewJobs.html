@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- Job Opportunities (visible only for company admin) -->
-    <nav>
-        <ul>
-            <li><a href="firstpage.html">Home</a></li>
-            <li><a href="CreatedJobs.html">Created Jobs</a></li>
-            <li><a href="AddNewJobs.html">Add Job</a></li>
-        </ul>
-    </nav>
-<h2>Job Opportunities</h2>
-<form>
-    <label for="ID">Job ID:</label><br>
-    <input type="number" id="Job_ID" name="Job_ID" required><br><br>
-    <label for="job_title">Job Title:</label><br>
-    <input type="text" id="job_title" name="job_title" required><br><br>
-    <label for="salary">Salary:</label><br>
-    <input type="number" id="salary" name="salary" required><br><br>
-    <label for="company_name">Company Name:</label><br>
-    <input type="text" id="company_name" name="company_name" required><br><br>
-    
-    <label for="job_status">Job Status:</label><br>
-    <input type="radio" id="open" name="job_status" required>
-    <label for="open">open</label><br>
-    <input type="radio" id="close" name="job_status" required>
-    <label for="close">close</label><br><br>
-    
-    
-    <label for="description">Description:</label><br>
-    <textarea id="description" name="description" required></textarea><br><br>
-    <label for="years_of_experience">Years of Experience:</label><br>
-    <input type="text" id="years_of_experience" name="years_of_experience" required><br><br>
-    <button>Add</button>
-</form>
-    
-</body>
-</html>
+    <h2>Job Opportunities</h2>
+    <form>
+        <label for="ID">Job ID:</label><br>
+        <input type="number" id="Job_ID" name="Job_ID" required><br><br>
+        <label for="job_title">Job Title:</label><br>
+        <input type="text" id="job_title" name="job_title" required><br><br>
+        <label for="salary">Salary:</label><br>
+        <input type="number" id="salary" name="salary" min="1" required><br><br>
+        <label for="company_name">Company Name:</label><br>
+        <input type="text" id="company_name" name="company_name" required><br><br>
 
+        <label for="job_status">Job Status:</label><br>
+        <input type="radio" id="open" name="job_status" required>
+        <label for="open">open</label><br>
+        <input type="radio" id="close" name="job_status" required>
+        <label for="close">close</label><br><br>
+
+        <label for="user">Created:</label><br>
+        <input id="user" type="text" name="" id="" required><br><br>
+
+        <label for="">Location:</label><br>
+        <select name="" id="">
+            <option value="">Hybrid</option>
+            <option value="">On-site</option>
+            <option value="">Remote</option>
+        </select>
+        <br><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
+        <label for="years_of_experience">Years of Experience:</label><br>
+        <input type="text" id="years_of_experience" name="years_of_experience" required><br><br>
+        <input type="submit" value="Add Job Opportunity">
+    </form>
+
+</body>
+
+</html>
