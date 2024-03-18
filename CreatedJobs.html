@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Created jobs</title>
+    <style>
+        nav{
+            display: flex;
+            height: 60px;
+        }
+        nav ul{
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li a{
+            display:block ;
+            padding:8px ;
+            text-decoration: none;
+            margin: 20px;
+        }
+        
+    </style>
 </head>
 <body>
-    <nav>
+    <nav id="navbar">
+        <img src="Images/Career_Catalyst.png" alt="Website's Logo">
         <ul>
-            <li><a href="firstpage.html">Home</a></li>
+            <li><a href="Home.html">Home</a></li>
             <li><a href="CreatedJobs.html">Created Jobs</a></li>
             <li><a href="AddNewJobs.html">Add Job</a></li>
         </ul>
@@ -16,9 +36,10 @@
     <div class="created-jobs">
         <div>
             <h2>DevOps Engineer</h2>
-            <img src="logo1.webp" alt="company logo" width="225" height="225">
+            <img src="Images/Metachain.webp" alt="company logo" width="225" height="225">
             <h3> Metachain Technologies inc. </h3>
             <ul>
+                <li><p><span>Job ID :</span> 1</p></li>
                 <li><p>Egypt (remote)</p></li>
                 <li><p>Created 2 weeks ago</p></li>
                 <li><p><span>Salary :</span> 25 000 EGP</p></li>
@@ -43,9 +64,10 @@
         <hr>
         <div>
             <h2>DevOps Consultant - IBM Cloud pak</h2>
-            <img src="logo2.jpg" alt="company logo" width="225" height="225">
+            <img src="Images/IBM.jpg" alt="company logo" width="225" height="225">
             <h3> IBM </h3>
             <ul>
+                <li><p><span>Job ID :</span> 2</p></li>
                 <li><p>Cairo, Egypt (on-site)</p></li>
                 <li><p>Created 3 weeks ago</p></li>
                 <li><p><span>Salary :</span> 30 000 EGP</p></li>
@@ -70,9 +92,10 @@
         <hr>
         <div>
             <h2>Software Testing Engineer </h2>
-            <img src="valeo.png" alt="company logo">
+            <img src="Images/valeo.png" alt="company logo">
             <h3> Valeo </h3>
             <ul>
+                <li><p><span>Job ID :</span> 3</p></li>
                 <li><p>Zayed ,Egypt (on-site)</p></li>
                 <li><p>Created 2 weeks ago</p></li>
                 <li><p><span>Salary :</span> 20 000 EGP</p></li>
@@ -98,9 +121,10 @@
         <hr>
         <div>
             <h2>principal Software Engineer</h2>
-            <img src="logo4.jpeg" alt="company logo">
+            <img src="Images/smurge.jpeg" alt="company logo">
             <h3>Sumerge </h3>
             <ul>
+                <li><p><span>Job ID :</span> 4</p></li>
                 <li><p>Cairo ,Egypt (hybrid)</p></li>
                 <li><p>Created 2 weeks ago</p></li>
                 <li><p><span>Salary :</span> 40 000 EGP</p></li>
@@ -127,21 +151,22 @@
         <hr>
         <div>
             <h2>Full Stack Developer</h2>
-            <img src="logo5.jpeg" alt="company logo">
+            <img src="Images/ElSewedy.jpeg" alt="company logo">
             <h3> ELSEWEDY ELECTRIC </h3>
             <ul>
+                <li><p><span>Job ID :</span> 5</p></li>
                 <li><p>10th of ramdan ,Egypt (hybrid)</p></li>
                 <li><p>Created 2 weeks ago</p></li>
                 <li><p><span>Salary :</span> 15 000 EGP</p></li>
                 <li><p><span>Years of Experience:</span> fresh graduates, 3+ years</p></li>
                 <li><p><span>Job status :</span></p>
                     <label>
-                        <input type="radio" name="jobstatus4" value="open" checked>
+                        <input type="radio" name="jobstatus5" value="open" checked>
                         Open
                     </label><br>
                 
                     <label>
-                        <input type="radio" name="jobstatus4" value="closed">
+                        <input type="radio" name="jobstatus5" value="closed">
                         closed
                     </label><br>
                 </li>
@@ -152,5 +177,6 @@
             <button>Delete Job</button>
         </div>
     </div>
+    <button><a href="#navbar">Go Up</a></button>
 </body>
 </html>

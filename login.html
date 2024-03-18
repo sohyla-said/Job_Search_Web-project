@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
+    <style>
+      nav{
+          display: flex;
+          height: 60px;
+      }
+      ul{
+          display: flex;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+      }
+      li a{
+          display:block ;
+          padding:8px ;
+          text-decoration: none;
+          margin: 20px;
+      }
+      
+  </style>
 </head>
 <body>
     <nav>
         <ul>
-          <li><a href="firstpage.html">Home</a></li>
+          <li><a href="Home.html">Home</a></li>
           <li><a href="signup.html">Sign Up</a></li>
           <li><a href="login.html">Log In</a></li>
         </ul>
@@ -20,8 +39,8 @@
     <input type="text" id="username" name="username" required><br><br>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required><br><br>
-    <button type="submit" name="login_type" value="admin" onclick="location.href='AdminCreatedJobs.html'">Admin Login</button>
-    <button type="submit" name="login_type" value="user" onclick="location.href='UserViewList.html'">User Login</button>
+    <button type="submit" name="login_type" value="admin" onclick="location.href='CreatedJobs.html'">Admin Login</button>
+    <button type="submit" name="login_type" value="user" onclick="location.href='viewlist.html'">User Login</button>
 </form>
 </body>
 </html>
