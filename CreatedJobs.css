@@ -124,7 +124,12 @@ button a{
     font-size: 16px;
     font-weight: 500;
     border-radius: 10px;
-
+}
+i{
+    margin-right: 5px;
+}
+.job-btn i, .up-btn i{
+    margin-left: 5px;
 }
 .job:hover{
     background-color: #02457a;
@@ -140,15 +145,19 @@ button a{
     margin: 40px auto;
     padding: 10px;
     width: auto;
-    width: 100px;
+    width: 110px;
     font-size: 20px;
     font-weight: 500;
     background-color: #d6e8ee;
     border: 1px solid #02457a;
+    color: #02457A;
 }
-.up-btn a{
+/* .up-btn a{
     color:#02457a;
 }
+.up-btn i{
+    color: #02457A;
+} */
 .up-btn:hover{
     border-radius: 10px;
     transition:0.3s;
