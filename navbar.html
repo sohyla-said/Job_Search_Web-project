@@ -7,52 +7,59 @@
   <style>
     nav{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         height: 60px;
-        margin-left:330px ;
-        margin-right: 250px;
+        background-color: #02457A;
+        width: 100%;
         
        
     }
-    ul{
+    nav ul{
         display: flex;
         list-style-type: none;
-        align-items: center;
+        margin-right:50px;
         gap: 40px;
        
 
     }
-     a{
+    .logo{
+      height: 60px; /* Adjust as needed */
+      margin-left: 50px; /* Adjust as needed */
+    }
+
+  nav a{
         display:inline-block ;
         position: relative;
         text-decoration: none;
-        color: black;
+        color: #D6E8EE;
         font-weight: 800;
         
   }
  
-   a:before,a:after{
+  nav a:before, nav a:after{
     content:"";
     position: absolute;
-    background-color:#018ABE;
+    background-color:#D6E8EE;
     height:2px;
     width: 0;
     transition:0.5s;
   }
-  a:after{
+  nav a:after{
     left:0;
     bottom: -5px;
 
   }
-  a:before{
+  nav a:before{
     right: 0;
     top:-5px;
   }
-   a:hover:after,
-   a:hover:before{
+  nav a:hover:after,
+  nav a:hover:before{
       width: 100%;
     } 
-    a:hover{
-      color: #018ABE;
+  nav a:hover{
+      color: #97CADB;
 
     }
     
@@ -61,9 +68,9 @@
 <body>
  
   <nav>
-    <img src="careercatalyst.jpg" alt="Website's Logo">
+    <img src="career.jpg" alt="Website's Logo" class="logo">
     <ul>
-        <li><a href="home" >Home</a></li>
+        <li><a href="home.html" >Home</a></li>
         <li><a href="searchfortasks.html" >Tasks</a></li>
         <li><a href="viewlist.html" >Available Jobs</a></li>
         <li><a href="appliedjobs.html">Applied Jobs</a></li>
