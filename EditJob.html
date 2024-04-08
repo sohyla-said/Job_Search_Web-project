@@ -5,28 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Job</title>
+    <link rel="icon" href="Images/Career_Catalyst.png">
     <style>
-        nav{
+        nav {
             display: flex;
             height: 60px;
         }
-        ul{
+
+        ul {
             display: flex;
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
-        li a{
-            display:block ;
-            padding:8px ;
+
+        li a {
+            display: block;
+            padding: 8px;
             text-decoration: none;
             margin: 20px;
         }
-        
     </style>
 </head>
 <nav>
-    <img src="WebsiteLogo.jpg" alt="Website's Logo">
+    <img src="Images/Career_Catalyst.png" alt="Website's Logo">
     <ul>
         <li><a href="Home.html">Home</a></li>
         <li><a href="CreatedJobs.html">Created Jobs</a></li>
@@ -42,13 +44,13 @@
         <input type="number" id="job_id" name="job_id" min="" max="" step="1">
         <br><br>
         <label for="job_title">Job Title:</label><br>
-        <input type="text" id="" name="job_title">
+        <input type="text" id="job_title" name="job_title">
         <br><br>
         <label for="salary">Salary:</label><br>
-        <input type="number" id="salary" name="salary" min="1">
+        <input type="number" id="salary" name="salary" min="1" step="1">
         <br><br>
         <label for="company_name">Company Name:</label><br>
-        <input type="text" id="" name="company_name">
+        <input type="text" id="company_name" name="company_name">
         <br><br>
         <label for="job_status">Job Status:</label><br>
         <div>
@@ -62,13 +64,13 @@
         <input type="text" id="created" name="created">
         <br><br>
         <label for="years_of_experience">Years of Experience:</label><br>
-        <input type="text" id="" name="years_of_experience">
+        <input type="text" id="years_of_experience" name="years_of_experience">
         <br><br>
         <label for="location">Location:</label><br>
-        <input type="text" id="" name="">
+        <input type="text" id="location" name="location">
         <br><br>
         <label for="job_description">Job Description:</label><br>
-        <textarea name="job_description" id="job_description" placeholder=""></textarea>
+        <textarea name="job_description" id="job_description" placeholder="Job Description"></textarea>
         <br><br>
         <label for="WorkType">Work Type:</label><br>
         <select name="WorkType" id="WorkType">
