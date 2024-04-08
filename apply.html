@@ -1,67 +1,181 @@
+
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Job Application  </title>
-    <style>
-        .nav{
-            display: flex;
-            height: 60px;
-        }
-        .nav ul{
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        li a{
-            display:block ;
-            padding:8px ;
-            text-decoration: none;
-            margin: 20px;
-        }
-        
-    </style>
+    <link rel="stylesheet" type="text/css" href="apply.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="nav">
-        <img src="Images/Career_Catalyst.png" alt="Website's Logo">
+    <nav>
         <ul>
-            <li><a href="Home.html">Home</a></li>
+            <li><a href="home">Home</a></li>
             <li><a href="searchfortasks.html">Tasks</a></li>
             <li><a href="viewlist.html">Available Jobs</a></li>
             <li><a href="appliedjobs.html">Applied Jobs</a></li>
-        </ul>
+        </ul>
     
-    </div>
-    <h1>JOB APPLICATION FORM</h1>
-    <form action="application"  method="post">
+      </nav>
+    <div class="userinput">
+        <h1>JOB APPLICATION FORM</h1>
+        <form action="application" method="post" onsubmit="return validateForm()">
         <label for="firstname">First Name: </label> <br>
-        <input type="text" id="firstname" name="firstname" required><br><br>
+        <input type="text"  id="firstname" name="firstname" ><br><br>
+        <span class="error-message" id="fn-error"></span><br><br>
 
         <label for="lastname">Last Name: </label><br>
-        <input type="text" id="lastname" name="lastname" required><br><br>
+        <input type="text"  id="lastname" name="lastname" ><br><br>
+        <span class="error-message" id="ln-error"></span><br><br>
 
         <label for="email">Email: </label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email"  id="email" name="email" ><br><br>
+        <span class="error-message" id="email-error"></span><br><br>
 
         <label for="phone">Phone Number: </label><br>
-        <input type="text" id="phone" name="phone" required><br><br>
+        <input type="text" id="phone" name="phone" ><br><br>
+        <span class="error-message" id="phone-error"></span><br><br>
+
 
         <label for="experience">Years of Work Experience: </label><br>
-        <input type="number" id="experience" name="experience" required min="2"><br><br>
+        <input type="number"  id="experience" name="experience"  ><br><br>
+        <span class="error-message" id="exp-error"></span><br><br>
 
-        <label for="position">What position are you applying for ?: </label><br>
-        <input type="text" id="position" name="position" required><br><br>
+        <label for="position">What position are you applying for ? </label><br>
+        <input type="text" id="position" name="position" ><br><br>
+        <span class="error-message" id="position-error"></span><br><br>
 
         <label for="resume">Upload your Resume:</label><br>
-        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx "><br><br>
+        <input type="file"  id="resume" name="resume" accept=".pdf,.doc,.docx " ><br><br>
+        <span class="error-message" id="resume-error"></span><br><br>
 
         <label for="coverletter">Cover Letter:</label><br>
-        <textarea id="coverletter" name="coverletter"></textarea><br><br>
+        <textarea id="coverletter"  name="coverletter"></textarea><br><br>
+        <span class="error-message" id="coverletter-error"></span><br><br>
 
-        <input type="submit" value="Submit your Application"><br><br>
+        <input type="submit" class= "submit-button" value="Submit your Application" onclick ="submission()" ><br><br>
+    </div>
     </form>
+
+    <script type="text/javascript">
+        function validateForm() {
+            var fn = document.getElementById("firstname").value;
+            var ln = document.getElementById("lastname").value;
+            var e = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var exp = document.getElementById("experience").value;
+            var position = document.getElementById("position").value;
+            var resume = document.getElementById("resume").files;
+            var coverletter = document.getElementById("coverletter").value;
+            var words = coverletter.split(/\s+/);
+            var wordcount = words.length;
+       
+            if (fn.trim() === "") {
+                document.getElementById("fn-error").innerText = "First name can't be blank";
+                return false;
+            }
+            else {
+                document.getElementById("fn-error").innerText = "";
+            }
+
+            if (ln.trim() === "") {
+                document.getElementById("ln-error").innerText = "Last name can't be blank";
+                return false;
+            }
+            else {
+                document.getElementById("ln-error").innerText = "";
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(e)) {
+                document.getElementById("email-error").innerText = "Please enter a valid email address";
+                return false;
+            }
+            else {
+                document.getElementById("email-error").innerText = "";
+            }
+            if (phone.trim() ===""){
+                document.getElementById("phone-error").innerText = "Phone number can't be blank";
+                return false;
+            }
+          
+            if (isNaN(phone)) {
+                document.getElementById("phone-error").innerText = "Phone number must be numeric";
+                return false;
+            }
+            else if (phone.length != 11){
+                document.getElementById("phone-error").innerText = "Phone number must be 11 digit";
+                return false;
+            }
+            else {
+                document.getElementById("phone-error").innerText = "";
+            }
+            if (exp.trim() ===""){
+                document.getElementById("exp-error").innerText = "Years of work experience can't be blank";
+                return false;
+            }
+            else if (exp < 2) {
+                document.getElementById("exp-error").innerText = "Years of work experience must be at least 2 Years";
+                return false;
+            }
+            else {
+                document.getElementById("exp-error").innerText = "";
+            }
+            
+            if (position.trim() === "") {
+                document.getElementById("position-error").innerText = "Position field can't be empty";
+                return false;
+            }
+            else {
+                document.getElementById("position-error").innerText = "";
+            }
+
+            if (resume.length === 0) {
+                document.getElementById("resume-error").innerText = "Your Resume must be added";
+                return false;
+            }
+            else {
+                document.getElementById("resume-error").innerText = "";
+            }
+            if (coverletter.trim() === "") {
+                document.getElementById("coverletter-error").innerText = "Cover letter field can't be empty";
+                return false;
+            }
+            else if (wordcount  < 100){
+                document.getElementById("coverletter-error").innerText = "Cover letter must be more than 100 words";
+                return false;
+            }
+            else {
+                document.getElementById("coverletter-error").innerText = "";
+            }
+  
+            return true; 
+        }
+
+
+
+        function confirmation() {
+            var res = confirm("Are you sure You want to submit ");
+            if (res) {
+                  window.location.href = "appliedjobs.html";
+                return true; // User confirmed, allow form submission
+                
+            } else {
+                return false; // User canceled, prevent form submission
+            }
+        }
+
+        function submission() {
+
+            if (validateForm()) {
+              return  confirmation();
+              
+            } else {
+                return false; // Prevent default form submission if validation fails
+            }
+        }
+    </script>
+    
 </body> 
 </html>
