@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+    nav{
+        display: flex;
+        height: 60px;
+        margin-left:330px ;
+        margin-right: 250px;
+        
+       
+    }
+    ul{
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        gap: 40px;
+       
+
+    }
+     a{
+        display:inline-block ;
+        position: relative;
+        text-decoration: none;
+        color: black;
+        font-weight: 800;
+        
+  }
+ 
+   a:before,a:after{
+    content:"";
+    position: absolute;
+    background-color:#018ABE;
+    height:2px;
+    width: 0;
+    transition:0.5s;
+  }
+  a:after{
+    left:0;
+    bottom: -5px;
+
+  }
+  a:before{
+    right: 0;
+    top:-5px;
+  }
+   a:hover:after,
+   a:hover:before{
+      width: 100%;
+    } 
+    a:hover{
+      color: #018ABE;
+
+    }
+    
+</style>
+</head>
+<body>
+ 
+  <nav>
+    <img src="careercatalyst.jpg" alt="Website's Logo">
+    <ul>
+        <li><a href="home" >Home</a></li>
+        <li><a href="searchfortasks.html" >Tasks</a></li>
+        <li><a href="viewlist.html" >Available Jobs</a></li>
+        <li><a href="appliedjobs.html">Applied Jobs</a></li>
+    </ul>
+
+  </nav>
+</body>
+</html>
