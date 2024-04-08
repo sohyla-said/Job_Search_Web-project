@@ -71,58 +71,67 @@
     form button,
     form select,
     form textarea {
-      padding: 5px; /* padding and spacing */
-      border: 2px solid #ccc; /* thin border */
-      border-radius: 10px; /* rounded corners */
-      font-size: 16px;
-      margin-bottom: 10px; /* space between inputs */
-      width: auto;
-      
-      outline: none;
+        padding: 5px;
+        /* padding and spacing */
+        border: 2px solid #ccc;
+        /* thin border */
+        border-radius: 10px;
+        /* rounded corners */
+        font-size: 16px;
+        margin-bottom: 10px;
+        /* space between inputs */
+        width: auto;
+        outline: none;
     }
 
-    
     form input:focus,
     form button:focus,
     form select:focus,
     form textarea:focus {
-      border-color: #001B48;
+        border-color: #001B48;
     }
 
     form input[type="radio"] {
-      width: auto;
+        width: auto;
     }
 
     form input[type="submit"] {
-      width: auto;
-      background-color: #D6E8EE;
-      border-radius: 20px;
-      color: #001B48;
+        width: auto;
+        background-color: #D6E8EE;
+        border-radius: 20px;
+        color: #001B48;
     }
 
     form input[type="submit"]:hover {
-      background-color: #02457A;
-      color: white;
+        background-color: #02457A;
+        color: white;
     }
-        
-    body{
-        background-color:#ebebeb ;    
-        }
-    form{
+
+    body {
+        background-color: #ebebeb;
+    }
+
+    form {
         width: 500px;
         border: 2px solid #02457a;
-        height:1000px;
-        padding:0 15px ;
+        height: 1000px;
+        padding: 0 15px;
         border-radius: 18px;
         color: #02457a;
-        background-color:white;
+        background-color: white;
         margin-left: 500px;
-        margin-top:50px ;
+        margin-top: 50px;
         text-align: center;
+    }
 
-            
-        }
-    
+    label {
+        display: inline-block;  
+        width: 150px;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+        
+
 
     </style>
 </head>
@@ -140,7 +149,8 @@
       </nav>
     <!-- Job Opportunities (visible only for company admin) -->
     <form>
-        <h2>Job Opportunities</h2>
+        <div class="input-group">
+            <h2>Job Opportunities</h2>
         <label for="ID">Job ID:</label><br>
         <input type="number" id="Job_ID" name="Job_ID" required><br><br>
         <label for="job_title">Job Title:</label><br>
@@ -174,15 +184,10 @@
         <label for="years_of_experience">Years of Experience:</label><br>
         <input type="text" id="years_of_experience" name="years_of_experience" required><br><br><br>
         <input type="submit" value="Add Job Opportunity">
+        </div>
+        
     </form>
 
 </body>
 
 </html>
-
-
-
-</body>
-
-</html>
-
