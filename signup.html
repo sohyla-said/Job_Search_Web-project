@@ -4,59 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
-  <style>
-    nav{
-        display: flex;
-        height: 60px;
-    }
-    ul{
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    li a{
-        display:block ;
-        padding:8px ;
-        text-decoration: none;
-        margin: 20px;
-    }
-    
-</style>
+    <link rel="stylesheet" href="signup&in.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
   </head>
-
 <body>
-  <nav>
-    <img src="Images/Career_Catalyst.png" alt="Website's Logo">
-    <ul>
-      <li><a href="Home.html">Home</a></li>
-      <li><a href="signup.html">Sign Up</a></li>
-      <li><a href="login.html">Log In</a></li>
-    </ul>
-  </nav>
-  <h1>Sign Up</h1>
-  <h2>Company Admin/User</h2>
-  <form method="post" action="viewlist.html">
-    Username:<input type="text" size="15" maxlength="40" name="username">
-    <br/><br/>
-    Password: <input type="password" size="15" maxlength="30" name="password">
-    <br/><br/>
-    Confirm Password:
-    <input type="password" size="15" maxlength="30" name="confirm_password">
-    <br/><br/>
-    Email: <input type="email" size="20" maxlength="40" name="email">
-    <br/><b/>
-    Are you a user?
-    <input type="checkbox" id="is_user" name="user_type" value="user">
-    <br/>
-    Are you a company admin?
-    <input type="checkbox" id="is_company_admin" name="is_company_admin" value="true">
-    <br/><br/>
-    Company Name:<input type="text" name="company_name" disabled>
-    <br/><br/>
-    <button type="submit" name="signup_type" value="adminS"><a href="CreatedJobs.html">Sign up as an admin</a></button>
-    <button type="submit" name="signup_type" value="userS"><a href="viewlist.html">Sign up as a user</a></button>
-  </form>
-</body>
-</html>
+<nav id="navbar">
+        <img src="Images/logo2.png" alt="Website's Logo" class="navimg">
+        <ul>
+            <li><a href="Home.html" class="navlink">Home</a></li>
+            <li><a href="CreatedJobs.html" class="navlink">Created Jobs</a></li>
+            <li><a href="AddNewJobs.html" class="navlink">Add Job</a></li>
+        </ul>
+    </nav>
 
+<h2>login/Sign up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create account</h1>
+			<div class="user-box">
+                        <span class="material-icons">person</span>
+                        <input type="text" maxlength="40" name="username" required="">
+                        <label>Username</label>
+                        </div>
+                        <div class="user-box">
+                        <span class="material-icons">lock</span>
+                        <input type="password"  maxlength="30" name="password" id="password" onkeyup="checkPasswordStrength()"required="">
+                        <label>Password</label>
+                        </div>
+                        <div class="user-box">
+                        <span class="material-icons">visibility_off</span>
+                        <input type="confirm_password"  maxlength="30" name="confirm_password" id="confirm_password" required onkeyup="comparePasswords()"required="">
+                        <label>Confirm Password</label>
+                        </div>
+                        <div class="user-box">
+                        <span class="material-icons">mail</span>
+                        <input type="email" maxlength="40" name="email" required="">
+                        <label>Email</label></div>
+                        <div class="checkbox-inline">
+                        <input type="checkbox" id="is_user" name="user_type" value="user" required="">
+                        <label for="is_user">User</label>
+                        </div>                       
+                        <div class="checkbox-inline">
+                        <input type="checkbox"id="is_company_admin" name="is_company_admin" value="true" onclick="toggleCompanyField(this)">
+                        <label for="is_company_admin">Company Admin</label>
+                        </div>
+                        <div class="user-box" id="company_name_field">
+                        <span class="material-icons">business_center</span> 
+                        <input type="company_name"  name="company_name" disabled id="company_name" required="">
+                        <label>Company Name</label>
+                        <span id="company_name_message"></span>
+                        </div>
+
+
+                        
+    <div class="butto">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </div>
+
+	</form>
+	</div>
+
+
+<div class="form-container sign-in-container">
+        <form action="#">
+	<h1>Login</h1>
+	
+			
+	<div class="user-box">
+    <span class="material-icons">person</span>
+    <input type="text" maxlength="40" name="username" required="">
+    <label for="username">Username</label>
+</div>
+
+<div class="user-box">
+    <span class="material-icons">lock</span>
+    <input type="password"maxlength="30" name="password" id="password"  required="">
+    <label for="password">Password</label>
+</div>
+<div class="checkbox-inline">
+<input type="checkbox" id="remember-me" name="remember_me">
+<label for="remember-me">Remember Me</label>
+   
+</div>
+    <div class="butto">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </div>
+<span class="forgot-password">Forgot password?</span>
+  </form>
+</div>
+
+			
+
+<div class="overlay-container">
+<div class="overlay">
+<div class="overlay-panel overlay-left">
+<h1>Welcome Back!</h1>
+<p>To keep connected with us please login with your personal info</p>
+<button class="ghost" id="signIn">Sign In</button>
+</div>
+<div class="overlay-panel overlay-right">
+<h1>Hello, Friend!</h1>
+<p>Not registered?Create an account</p>
+Enter your personal details and start journey with us</p>
+<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+</script>
+</body>
