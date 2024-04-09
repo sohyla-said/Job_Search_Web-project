@@ -72,6 +72,7 @@ margin-bottom: 3px;
 width: auto;
 color: #001B48;
 max-width: fit-content;
+background-color: #D6E8EE;
 
 }
 
@@ -95,6 +96,7 @@ line-height: 15px
 .userinput form input:hover,
 .userinput form textarea:hover {
 border-color: #001B48;
+
 }
 
 .userinput form input[type="submit"] {
@@ -132,4 +134,5 @@ align-content: center;
 
 label {
 color: #001B48; 
+font-size: 18px;
 }
