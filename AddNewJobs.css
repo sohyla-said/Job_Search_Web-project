@@ -5,8 +5,6 @@ nav{
     height: 70px;
     background-color: #02457A;
     width: 100%;
-    
-   
 }
 nav ul{
     display: flex;
@@ -59,8 +57,10 @@ nav a:hover{
   color: #97CADB;
 
 }
-
-form input {
+form input,
+form button,
+form select,
+form textarea {
     padding: 5px;
     /* padding and spacing */
     border: 2px solid #ccc;
@@ -73,25 +73,20 @@ form input {
     width: auto;
     outline: none;
     background-color:#D6E8EE;
+    
+}
+
+form input:focus,
+form button:focus,
+form select:focus,
+form textarea:focus {
     border-color: #001B48;
 }
 
-form input:focus{
-    border-color: #001B48;
+form input[type="radio"] {
+    width: auto;
 }
-form {
-    width: 500px;
-    border: 2px solid #001B48;
-    height: 400px;
-    padding: 0 15px;
-    border-radius: 18px;
-    color: #001B48;
-    background-color: white;
-    margin-left: 500px;
-    margin-top: 50px;
-    margin-bottom: 5px;
-    text-align: center;
-}
+
 form input[type="submit"] {
     width: auto;
     background-color: #D6E8EE;
@@ -103,19 +98,29 @@ form input[type="submit"]:hover {
     background-color: #02457A;
     color: white;
 }
+
 body {
     background-color: #ebebeb;
 }
+
+form {
+    width: 600px;
+    border: 2px solid #001B48;
+    height: 1100px;
+    padding: 0 15px;
+    border-radius: 18px;
+    color: #001B48;
+    background-color: white;
+    margin-left: 450px;
+    margin-top: 50px;
+    text-align: center;
+}
+
 label {
     display: inline-block;  
     width: 150px;
     text-align: left;
     margin-right: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     font-size: 20px;
 }
-.error {
-    color: red;
-    font-size: 0.8rem;
-    margin-top: 5px;
-  }
