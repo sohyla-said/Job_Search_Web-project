@@ -4,35 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <style>
-    nav{
-        display: flex;
-        height: 60px;
-    }
-    ul{
-        display: flex;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-    li a{
-        display:block ;
-        padding:8px ;
-        text-decoration: none;
-        margin: 20px;
-    }
-    
-</style>
+  <link rel="stylesheet" href="Home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <nav>
+    <img src="Images/logo2.png" alt="Website's Logo">
     <ul>
-      <li><a href="Home.html">Home</a></li>
-      <li><a href="signup.html">Sign Up</a></li>
-      <li><a href="login.html">Log In</a></li>
+        <li><a href="Home.html" class="navlink"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="login.html">Log In</a></li>
     </ul>
   </nav>
-  <section style="display: flex; justify-content: space-around;">
+  <!-- <section style="display: flex; justify-content: space-around;">
     <div style="width: 600px; margin-left: 20px;" class="intro">
       <p style="font-size: 50px; border-bottom: 2px solid gray;">Find your dream job here Easy and Fast.</p>
       <p style="padding-top: 0;">With <span style="font-weight: bold;">Career Catalyst</span> your way to find the job you want will be easy, we offer a wide range 
@@ -64,6 +48,14 @@
       <h4>Fullstack Developer</h4>
       <p>A developer or engineer who can build both the front end and the back end of a website. </p>
     </div>
-  </div>
+  </div> -->
+  <section class="intro-section">
+    <div class="intro">
+      <p class="intro-title">Find your dream job here Easy and Fast.</p>
+      <p class="intro-desc">With <span>Career Catalyst</span> your way to find the job you want will be easy, we offer a wide range 
+      of jobs in different Tech fields.</p>
+    </div>
+    <img src="Images/working1.avif" width="580px">
+  </section>
 </body>
 </html>
