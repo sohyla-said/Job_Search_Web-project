@@ -59,10 +59,8 @@ nav a:hover{
   color: #97CADB;
 
 }
-form input,
-form button,
-form select,
-form textarea {
+
+form input {
     padding: 5px;
     /* padding and spacing */
     border: 2px solid #ccc;
@@ -74,19 +72,26 @@ form textarea {
     /* space between inputs */
     width: auto;
     outline: none;
-}
-
-form input:focus,
-form button:focus,
-form select:focus,
-form textarea:focus {
+    background-color:#D6E8EE;
     border-color: #001B48;
 }
 
-form input[type="radio"] {
-    width: auto;
+form input:focus{
+    border-color: #001B48;
 }
-
+form {
+    width: 500px;
+    border: 2px solid #001B48;
+    height: 400px;
+    padding: 0 15px;
+    border-radius: 18px;
+    color: #001B48;
+    background-color: white;
+    margin-left: 500px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    text-align: center;
+}
 form input[type="submit"] {
     width: auto;
     background-color: #D6E8EE;
@@ -98,28 +103,19 @@ form input[type="submit"]:hover {
     background-color: #02457A;
     color: white;
 }
-
 body {
     background-color: #ebebeb;
 }
-
-form {
-    width: 500px;
-    border: 2px solid #001B48;
-    height: 1000px;
-    padding: 0 15px;
-    border-radius: 18px;
-    color: #001B48;
-    background-color: white;
-    margin-left: 500px;
-    margin-top: 50px;
-    text-align: center;
-}
-
 label {
     display: inline-block;  
     width: 150px;
     text-align: left;
     margin-right: 40px;
     margin-bottom: 5px;
+    font-size: 20px;
 }
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
