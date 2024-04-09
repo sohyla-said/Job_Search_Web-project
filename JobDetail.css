@@ -118,8 +118,12 @@ nav a:after {
   color: #d6e8ee;
   transition: 0.5s;
 }
-#apply{
-    color: #018abe;
+.apply-button:active {
+  background-color: #001b48;
+  color: #d6e8ee;
+}
+#apply {
+  color: #018abe;
 }
 .bold {
   font-weight: bold;
