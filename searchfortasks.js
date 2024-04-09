@@ -1,14 +1,22 @@
-const availableJobs = ["DevOps Engineer", "DevOps Consultant - IBM Cloud pak", "Software Testing Engineer", "Full Stack Developer", "Principal Software Engineer"];
-    const jobTitleInput = document.getElementById("jobTitle");
-    const jobSearchForm = document.getElementById("jobSearchForm");
-    const jobTitleError = document.getElementById("jobTitleError");
+const availableJobs = {
+  "DevOps Engineer": "devopseng.html",
+  "DevOps Consultant - IBM Cloud pak": "devopscon.html",
+  "Software Testing Engineer": "softwaretesting.html",
+  "Full Stack Developer": "fullstack.html",
+  "Principal Software Engineer": "principal.html"
+};
+const jobTitleInput = document.getElementById("jobTitle");
+const jobSearchForm = document.getElementById("jobSearchForm");
+const jobTitleError = document.getElementById("jobTitleError");
 
-    jobSearchForm.addEventListener("submit", function(event) {
-      const enteredJobTitle = jobTitleInput.value.trim();
-      if (!availableJobs.includes(enteredJobTitle)) {
-        jobTitleError.textContent = "Please enter a job title from the available jobs list.";
-        event.preventDefault(); 
-      } else {
-        jobTitleError.textContent = ""; 
-      }
-    });
+jobSearchForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const enteredJobTitle = jobTitleInput.value.trim();
+  const redirectUrl = availableJobs[enteredJobTitle];
+  
+  if (redirectUrl) {
+    window.location.href = redirectUrl; // Redirect the user to the details page
+  } else {
+    jobTitleError.textContent = "Please enter a job title from the available jobs list.";
+  }
+});
