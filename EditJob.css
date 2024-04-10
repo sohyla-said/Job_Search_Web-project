@@ -64,25 +64,84 @@ nav a:after {
   color: #97cadb;
 }
 
-#Details {
+form input,
+form textarea,
+form select {
+  padding: 5px;
+  /* padding and spacing */
+  border: 2px solid #ccc;
+  /* thin border */
+  border-radius: 10px;
+  /* rounded corners */
   font-size: 16px;
-  margin-top: 200px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px 50px;
-  width: 50%;
-  margin: 0 auto;
-  border: 3px solid #02457a;
-  width: 600px;
-  text-align: center;
-  height: 800px;
-  padding: 0 10px;
-  border-radius: 18px;
-  color: #02457a;
-  background-color: white;
+  margin-bottom: 10px;
+  /* space between inputs */
+  width: auto;
+  outline: none;
+  background-color: #d6e8ee;
 }
-button[type] {
+
+form input:focus,
+input:hover {
+  border-color: #001b48;
+}
+
+form {
+  width: 600px;
+  border: 2.5px solid #001b48;
+  height: 1050px;
+  padding: 0 15px;
+  border-radius: 18px;
+  color: #001b48;
+  background-color: white;
+  margin-left: 440px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+form input[type="radio"] {
+  margin-left: 40px;
+}
+form select,
+form option {
+  margin-right: 90px;
+}
+form input[type="submit"],
+form input[type="reset"] {
+  width: auto;
+  background-color: #d6e8ee;
+  border-radius: 20px;
+  color: #001b48;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+  background-color: #02457a;
+  color: white;
+}
+body {
+  background-color: #ebebeb;
+}
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  margin-right: 40px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* button[type] {
   width: auto;
   padding: 5px;
   margin-top: 10px;
@@ -103,4 +162,4 @@ button:hover {
 button:active {
   background-color: #001b48;
   color: #d6e8ee;
-}
+} */
