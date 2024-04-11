@@ -81,10 +81,106 @@ nav a:hover{
 .intro-desc span{
     font-weight: bold;
     font-size: 22px;
+    text-shadow: 0 0 5px #02457A,
+              0 0 25px #02457A,
+              0 0 50px #02457A,
+              0 0 100px #02457A;
 }
-.intro-desc span:hover{
+/* .intro-desc span:hover{
     background-color: #02457A;
     color: #d6e8ee;
     border-radius: 10px;
     padding: 5px;
+} */
+.intro-btn{
+    background-color:#D6E8EE;
+    padding: 10px 0;
+    font-size: 22px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border:2px solid #02457A;
+    border-radius: 20px;
+    width: 200px;
+}
+.intro-btn a{
+    text-decoration: none;
+}
+.intro-btn a:visited{
+    color: #02457A;
+}
+.intro-btn a i{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.intro-btn:hover{
+    transition:0.3s;
+    transform: scale(1.2);
+}
+.intro-img{
+    max-width: 100%;
+    height: auto;
+    min-width: 150px;
+    border-radius: 200px 200px 200px 200px;
+}
+.trust{
+    color: #02457A;
+    font-size: 30px;
+    text-align: center;
+}
+.trust img{
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+.browse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 30px 0 50px 0;
+    color: #02457A;
+}
+.browse-intro h3{
+    font-size: 20px;
+}
+.browse-btn{
+    padding: 5px 10px;
+    margin: 30px 30px;
+    border: 2px solid #02457A;
+    border-radius: 10px;
+    width: 60px;
+    background-color: #D6E8EE;
+}
+.browse-btn a{
+    text-decoration: none;
+    color: #02457A;
+    font-size: 18px;
+}
+.browse-btn:hover{
+    transition:0.3s;
+    transform: scale(1.2);
+}
+.job{
+    border: 2px solid #02457A;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;
+    height: auto;
+    background-color: #D6E8EE;
+}
+.job h4{
+    font-size: 25px;
+    text-decoration: underline;
+    margin:10px 0;
+}
+.job h4 i{
+    margin-right: 10px;
+}
+.job p{
+    font-size: 18px;
+}
+.job:hover{
+    background-color: #02457a;
+    color:#d6e8ee;
+    transition:0.3s;
+    transform: scale(1.09);
 }
