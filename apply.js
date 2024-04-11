@@ -6,6 +6,7 @@ function validateForm() {
     var phone = document.getElementById("phone").value;
     var exp = document.getElementById("experience").value;
     var position = document.getElementById("position").value;
+    var JobID = document.getElementById("jobID").value;
     var resume = document.getElementById("resume").files;
     var coverletter = document.getElementById("coverletter").value;
     var words = coverletter.split(/\s+/);
@@ -69,6 +70,14 @@ function validateForm() {
         document.getElementById("position-error").innerText = "";
     }
 
+    if (JobID.trim() === "") {
+        document.getElementById("jobID-error").innerText = "Job ID field can't be empty";
+       
+        return false;
+    } else {
+        document.getElementById("jobID-error").innerText = "";
+    }
+
     if (resume.length === 0) {
         document.getElementById("resume-error").innerText = "Your Resume must be added";
         
@@ -92,34 +101,21 @@ function validateForm() {
 }
 
 
-// function confirmation() {
-
-//     var res = confirm("Are you sure You want to submit ");
-//     return res;
-// }
-
-// function submission() {
-
-//     if (validateForm()) {
-//       return  confirmation();
-      
-      
-//     } else {
-//         return false; // Prevent default form submission if validation fails
-//     }
-// }
-
 function confirmation() {
     return confirm("Are you sure You want to submit ");
 }
 
+// Wait for the DOM content to be loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Select the form element
     var form = document.querySelector('form');
+    // Add event listener for form submission (event lisntener wait for an event to occur then do  a function)
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault();// Prevent default form submission behavior
         
+         // Check if form validation and confirmation are successful
         if (validateForm() && confirmation()) {
-            form.submit();
+            form.submit();// Submit the form
         }
     });
 });
