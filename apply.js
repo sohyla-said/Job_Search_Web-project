@@ -7,6 +7,7 @@ function validateForm() {
     var exp = document.getElementById("experience").value;
     var position = document.getElementById("position").value;
     var JobID = document.getElementById("jobID").value;
+    var Date = document.getElementById("Date").value;
     var resume = document.getElementById("resume").files;
     var coverletter = document.getElementById("coverletter").value;
     var words = coverletter.split(/\s+/);
@@ -77,6 +78,15 @@ function validateForm() {
     } else {
         document.getElementById("jobID-error").innerText = "";
     }
+
+    if (Date.trim() === "") {
+        document.getElementById("Date-error").innerText = "Date field can't be empty";
+       
+        return false;
+    } else {
+        document.getElementById("Date-error").innerText = "";
+    }
+
 
     if (resume.length === 0) {
         document.getElementById("resume-error").innerText = "Your Resume must be added";
