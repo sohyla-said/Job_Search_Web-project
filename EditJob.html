@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Job</title>
-    <link rel="icon" href="">
+    <link rel="icon" href="Images/logo2.png">
     <link rel="stylesheet" href="EditJob.css">
+    <script type="text/javascript" src="EditJob.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
     </style>
 </head>
 <nav id="navbar">
     <img src="Images/logo2.png" alt="Website's Logo" class="navimg">
     <ul>
-        <li><a href="Home.html"> <i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="Home.html"><i class="fa-solid fa-house"></i>Home</a></li>
         <li><a href="CreatedJobs.html">Created Jobs</a></li>
         <li><a href="AddNewJobs.html">Add Job</a></li>
     </ul>
@@ -24,39 +26,51 @@
 
 
 <body>
-    <form action="">
+    <form action="" onsubmit="return validateForm()" id="my-form" method="post">
         <h1>Edit Job Details</h1><br>
         <label for="job_id">Job ID:</label><br>
         <input type="number" id="job_id" name="job_id" min="" max="" step="1">
+        <span class="error-message"></span>
         <br><br>
         <label for="job_title">Job Title:</label><br>
         <input type="text" id="job_title" name="job_title">
+        <span class="error-message"></span>
         <br><br>
         <label for="salary">Salary:</label><br>
-        <input type="number" id="salary" name="salary" min="1" step="1">
+        <input type="text" id="salary" name="salary">
+        <span class="error-message"></span>
         <br><br>
         <label for="company_name">Company Name:</label><br>
         <input type="text" id="company_name" name="company_name">
+        <span class="error-message"></span>
         <br><br>
-        <label for="job_status">Job Status:</label><br>
+        <label>Job Status:</label><br>
         <div>
             <input type="radio" id="job_status_opened" name="job_status" value="opened" checked>
-            <label for="job_status_opened">Opened</label><br>
+            <label for="job_status_opened">Opened</label>
+            <span class="error-message"></span><br>
+
             <input type="radio" id="job_status_closed" name="job_status" value="closed">
             <label for="job_status_closed">Closed</label>
+            <span class="error-message"></span>
         </div>
+
         <br>
         <label for="created">Created:</label><br>
         <input type="text" id="created" name="created">
+        <span class="error-message"></span>
         <br><br>
+        <span class="error-message"></span>
         <label for="years_of_experience">Years of Experience:</label><br>
         <input type="text" id="years_of_experience" name="years_of_experience">
         <br><br>
         <label for="location">Location:</label><br>
         <input type="text" id="location" name="location">
+        <span class="error-message"></span>
         <br><br>
         <label for="job_description">Job Description:</label><br>
         <textarea name="job_description" id="job_description" placeholder="Job Description"></textarea>
+        <span class="error-message"></span>
         <br><br>
         <label for="WorkType">Work Type:</label><br>
         <select name="WorkType" id="WorkType">
@@ -65,8 +79,11 @@
             <option value="remote">Remote</option>
         </select>
         <br><br>
-        <input type="submit" value="Edit">
+        <input type="submit" value="Edit" id="submit-button">
+        <span class="error-message"></span>
         <input type="reset" value="Reset">
+        <span class="error-message"></span>
+
     </form>
 
 </body>
