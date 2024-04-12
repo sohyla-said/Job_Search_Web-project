@@ -82,14 +82,18 @@ form select {
 }
 
 form input:focus,
-input:hover {
+input:hover,
+textarea:focus,
+textarea:hover,
+select:focus,
+select:hover {
   border-color: #001b48;
 }
 
 form {
   width: 600px;
   border: 2.5px solid #001b48;
-  height: 1050px;
+  height: 1100px;
   padding: 0 15px;
   border-radius: 18px;
   color: #001b48;
@@ -130,16 +134,16 @@ label {
   margin-bottom: 5px;
   font-size: 20px;
 }
+.error-message {
+  display: none; /* Initially hide error messages  */
+  color: red;
+  font-size: 14px;
+  margin-top: 2px;
+}
 
-
-
-
-
-
-
-
-
-
+.error-message.active {
+  display: block; /* Show error messages on validation failure */
+}
 
 /* button[type] {
   width: auto;
