@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        background-color: #02457A;
+        width: 100%;
+        
+       
+    }
+    nav ul{
+        display: flex;
+        list-style-type: none;
+        margin-right:50px;
+        gap: 40px;
+       
+
+    }
+    .logo{ 
+     width: 120px;
+     height: 60px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     margin-left: 50px;
+    }
+
+  nav a{
+        display:inline-block ;
+        position: relative;
+        text-decoration: none;
+        color: #D6E8EE;
+        font-weight: 800;
+        font-size: 20px;
+        
+  }
+ 
+  nav a:before, nav a:after{
+    content:"";
+    position: absolute;
+    background-color:#D6E8EE;
+    height:2px;
+    width: 0;
+    transition:0.5s;
+  }
+  nav a:after{
+    left:0;
+    bottom: -5px;
+
+  }
+  nav a:before{
+    right: 0;
+    top:-5px;
+  }
+  nav a:hover:after,
+  nav a:hover:before{
+      width: 100%;
+    } 
+  nav a:hover{
+      color: #97CADB;
+
+    }
+    
+</style>
+</head>
+<body>
+ 
+  <nav>
+    <img src="careercatalyst2.jpg" alt="Website's Logo" class="logo">
+    <ul>
+        <li><a href="Home.html" >Home</a></li>
+        <li><a href="searchfortasks.html" >Tasks</a></li>
+        <li><a href="viewlist.html" >Available Jobs</a></li>
+        <li><a href="appliedjobs.html">Applied Jobs</a></li>
+    </ul>
+
+  </nav>
+</body>
+</html>

@@ -10,7 +10,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
     background-color: #02457A;
     width: 100%;
 }
@@ -22,7 +22,7 @@ nav ul{
 }
 nav img{ 
  width: 120px;
- height: 60px;
+ height: 80px;
  margin-top: 10px;
  margin-bottom: 10px;
  margin-left: 50px;
@@ -62,6 +62,7 @@ nav a:hover{
 .intro-section{
     display: flex; 
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 50px;
 }
 .intro{
@@ -78,13 +79,13 @@ nav a:hover{
     padding-top: 0;
     font-size: 18px;
 }
-.intro-desc span{
+.Career_Catalyst{
     font-weight: bold;
     font-size: 22px;
     text-shadow: 0 0 5px #02457A,
               0 0 25px #02457A,
               0 0 50px #02457A,
-              0 0 100px #02457A;
+              0 0 50px #02457A;
 }
 /* .intro-desc span:hover{
     background-color: #02457A;
@@ -92,11 +93,16 @@ nav a:hover{
     border-radius: 10px;
     padding: 5px;
 } */
+.avatars-img{
+    width: 150px;
+    height: fit-content;
+}
 .intro-btn{
+    display: block;
     background-color:#D6E8EE;
     padding: 10px 0;
     font-size: 22px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 50px;
     border:2px solid #02457A;
     border-radius: 20px;
@@ -122,6 +128,40 @@ nav a:hover{
     min-width: 150px;
     border-radius: 200px 200px 200px 200px;
 }
+.browse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 80px 0 50px 0;
+    color: #02457A;
+}
+.job{
+    border: 2px solid #02457A;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;
+    height: auto;
+    background-color: #D6E8EE;
+    text-align: center;
+}
+.job h4{
+    font-size: 25px;
+    text-decoration: underline;
+    margin:10px 0;
+}
+.job i{
+    font-size: 25px;
+}
+.job p{
+    font-size: 18px;
+}
+.job:hover{
+    background-color: #02457a;
+    color:#d6e8ee;
+    transition:0.3s;
+    transform: scale(1.09);
+}
 .trust{
     color: #02457A;
     font-size: 30px;
@@ -132,55 +172,31 @@ nav a:hover{
     margin-top: 15px;
     margin-left: 20px;
 }
-.browse{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 30px 0 50px 0;
-    color: #02457A;
-}
-.browse-intro h3{
-    font-size: 20px;
-}
-.browse-btn{
-    padding: 5px 10px;
-    margin: 30px 30px;
-    border: 2px solid #02457A;
-    border-radius: 10px;
-    width: 60px;
-    background-color: #D6E8EE;
-}
-.browse-btn a{
-    text-decoration: none;
-    color: #02457A;
-    font-size: 18px;
-}
-.browse-btn:hover{
-    transition:0.3s;
-    transform: scale(1.2);
-}
-.job{
-    border: 2px solid #02457A;
-    width: 300px;
-    padding: 10px; 
-    border-radius: 10px;
-    height: auto;
-    background-color: #D6E8EE;
-}
-.job h4{
-    font-size: 25px;
-    text-decoration: underline;
-    margin:10px 0;
-}
-.job h4 i{
-    margin-right: 10px;
-}
-.job p{
-    font-size: 18px;
-}
-.job:hover{
-    background-color: #02457a;
-    color:#d6e8ee;
-    transition:0.3s;
-    transform: scale(1.09);
+
+@media(max-width:768px){
+    .intro-title{
+        font-size: 35px;
+    }
+    .intro-desc{
+        font-size: 16px;
+    }
+    .Career_Catalyst{
+        font-size: 20px;
+    }
+    .avatars-img{
+        width: 110px;
+    }
+    .intro-btn{
+        padding: 10px 0;
+        font-size: 18px;
+        margin: 15px auto;
+        width: 140px;
+    }
+    .intro-img{
+        width: 400px;
+    }
+    .browse{
+        row-gap: 30px;
+    }
+
 }
