@@ -1,137 +1,134 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
-    <link rel="stylesheet" href="../CSS/signup&in.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Sign Up</title>
+  <link rel="stylesheet" href="../CSS/signup.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  </head>
+ </head>
 <body>
 <nav id="navbar">
-        <img src="../Images/logo2.png" alt="Website's Logo" class="navimg">
-        <ul>
-            <li><a href="Home.html" class="navlink">Home</a></li>
-            <li><a href="CreatedJobs.html" class="navlink">Created Jobs</a></li>
-            <li><a href="AddNewJobs.html" class="navlink">Add Job</a></li>
-        </ul>
-    </nav>
+    <img src="../Images/logo2.png" alt="Website's Logo" class="navimg">
+    <ul>
+    <li><a href="Home.html" class="navlink"><i class="fa-solid fa-house"></i>Home</a></li>
+    <li><a href="signup.html">Sign Up</a></li>
+    <li><a href="login.html">Log In</a></li>
+    </ul>
+  </nav>
 
-<h2>login/Sign up Form</h2>
+<h2>Sign up / login</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create account</h1>
 			<div class="user-box">
-                        <span class="material-icons">person</span>
-                        <input type="text" maxlength="40" name="username" required="">
-                        <label>Username</label>
-                        </div>
-                        <div class="user-box">
-                        <span class="material-icons">lock</span>
-                        <input type="password"  maxlength="30" name="password" id="password" onkeyup="checkPasswordStrength()"required="">
-                        <label>Password</label>
-                        </div>
-                        <div class="user-box">
-                        <span class="material-icons">visibility_off</span>
-                        <input type="confirm_password"  maxlength="30" name="confirm_password" id="confirm_password" required onkeyup="comparePasswords()"required="">
-                        <label>Confirm Password</label>
-                        </div>
-                        <div class="user-box">
-                        <span class="material-icons">mail</span>
-                        <input type="email" maxlength="40" name="email" required="">
-                        <label>Email</label></div>
-                        <div class="checkbox-inline">
-                        <input type="checkbox" id="is_user" name="user_type" value="user" required="">
-                        <label for="is_user">User</label>
-                        </div>                       
-                        <div class="checkbox-inline">
-                        <input type="checkbox"id="is_company_admin" name="is_company_admin" value="true" onclick="toggleCompanyField(this)">
-                        <label for="is_company_admin">Company Admin</label>
-                        </div>
-                        <div class="user-box" id="company_name_field">
-                        <span class="material-icons">business_center</span> 
-                        <input type="company_name"  name="company_name" disabled id="company_name" required="">
-                        <label>Company Name</label>
-                        <span id="company_name_message"></span>
-                        </div>
-
-
-                        
-    <div class="butto">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </div>
+            <span class="material-icons">person</span>
+            <input type="text" maxlength="40" name="username"id="username" required="">
+            <label>Username</label>
+            </div>
+            <div class="user-box">
+            <span class="material-icons">lock</span>
+            <input type="password" maxlength="30" name="password" id="password" onkeyup="checkPasswordStrength()"required="">
+            <label>Password</label>
+            </div>
+            <div class="user-box">
+            <span class="material-icons">visibility_off</span>
+            <input type="password" maxlength="30" name="confirm_password" id="confirm_password" onkeyup="comparePasswords()"required="">
+            <label>Confirm Password</label>
+            </div>
+            <div class="user-box">
+            <span class="material-icons">mail</span>
+            <input type="email" maxlength="30" name="email" id="email" required="">
+            <label>Email</label></div>
+            <div class="checkbox-inline">
+            <input type="checkbox" id="is_user" name="user_type" value="user" required="">
+            <label for="is_user">User</label>
+            </div>            
+            <div class="checkbox-inline">
+            <input type="checkbox"id="is_company_admin" name="is_company_admin" value="true" onclick="toggleCompanyField(this)">
+            <label for="is_company_admin">Company Admin</label>
+            </div>
+            <div class="user-box" id="company_name_field">
+            <span class="material-icons">business_center</span> 
+            <input type="company_name" name="company_name"id="company_name" disabled required="">
+            <label>Company Name</label>
+            <span id="company_name_message"></span>
+            </div>
+         
+  <div class="butto">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+  <button type="submit" onclick="submitForm(event)">Submit</button>
+  </div>
 
 	</form>
 	</div>
 
 
 <div class="form-container sign-in-container">
-        <form action="#">
+    <form action="#">
 	<h1>Login</h1>
 	
-			
+ 
 	<div class="user-box">
-    <span class="material-icons">person</span>
-    <input type="text" maxlength="40" name="username" required="">
-    <label for="username">Username</label>
+  <span class="material-icons">person</span>
+  <input type="text" maxlength="40" name="username" required="">
+  <label for="username">Username</label>
 </div>
 
 <div class="user-box">
-    <span class="material-icons">lock</span>
-    <input type="password"maxlength="30" name="password" id="password"  required="">
-    <label for="password">Password</label>
+  <span class="material-icons">lock</span>
+  <input type="password"maxlength="30" name="password" id="password" required>
+  <label for="password">Password</label>
 </div>
+
+<div class="checkbox-inline">
+               <input type="checkbox" id="is_User" name="User_type"  >
+                        <label for="is_User">User</label>
+                        </div>  
+<div class="checkbox-inline">
+           <input type="checkbox"id="is_Company_admin" name="is_Company_admin">
+                        <label for="is_Company_admin">Company Admin</label>
+                        </div>
+
 <div class="checkbox-inline">
 <input type="checkbox" id="remember-me" name="remember_me">
 <label for="remember-me">Remember Me</label>
-   
+  
 </div>
-    <div class="butto">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </div>
+  <div class="butto">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+  <button type="submit" onclick="submiForm(eve)">Submit</button>
+  </div>
 <span class="forgot-password">Forgot password?</span>
-  </form>
+ </form>
 </div>
-
-			
 
 <div class="overlay-container">
 <div class="overlay">
-<div class="overlay-panel overlay-left">
+<div class="overlay-panel overlay-right">
 <h1>Welcome Back!</h1>
 <p>To keep connected with us please login with your personal info</p>
-<button class="ghost" id="signIn">Sign In</button>
+<button class="ghost" id="signUp">Sign In</button>
 </div>
-<div class="overlay-panel overlay-right">
+<div class="overlay-panel overlay-left">
 <h1>Hello, Friend!</h1>
 <p>Not registered?Create an account</p>
 Enter your personal details and start journey with us</p>
-<button class="ghost" id="signUp">Sign Up</button>
+<button class="ghost" id="signIn">Sign Up</button>
 			</div>
 		</div>
 	</div>
 </div>
-
-
-<script>
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
-</script>
+<script type="text/javascript" src="../JS/signup.js"></script>
 </body>
+</html>
