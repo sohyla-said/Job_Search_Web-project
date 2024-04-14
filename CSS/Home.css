@@ -63,7 +63,10 @@ nav a:hover{
     display: flex; 
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 50px;
+    /* align-items: center; */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #dddddd;
 }
 .intro{
     color: #02457A;
@@ -97,43 +100,54 @@ nav a:hover{
     width: 150px;
     height: fit-content;
 }
-.intro-btn{
-    display: block;
-    background-color:#D6E8EE;
-    padding: 10px 0;
-    font-size: 22px;
-    margin-top: 30px;
-    margin-left: 50px;
-    border:2px solid #02457A;
-    border-radius: 20px;
-    width: 200px;
-}
-.intro-btn a{
-    text-decoration: none;
-}
-.intro-btn a:visited{
-    color: #02457A;
-}
-.intro-btn a i{
-    margin-left: 10px;
-    font-size: 25px;
-}
-.intro-btn:hover{
-    transition:0.3s;
-    transform: scale(1.2);
-}
 .intro-img{
     max-width: 100%;
     height: auto;
     min-width: 150px;
-    border-radius: 200px 200px 200px 200px;
+    border-radius: 150px 150px 150px 150px;
+}
+.jobs-section{
+    text-align: center;
+}
+.featured-jobs{
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    color: #02457A;
+    position: relative;
+    margin-top: 30px;
+    width: fit-content;
+    font-size: 30px;
+}
+.featured-jobs:before, .featured-jobs:after{
+    content:"";
+    position: absolute;
+    background-color:#02457A;
+    height:2px;
+    width: 0;
+    transition:0.5s;
+    }
+.featured-jobs:after{
+    left:0;
+    bottom: -5px;
+}
+.featured-jobs:before{
+    right: 0;
+    top:-5px;
+}
+.featured-jobs:hover:after,
+.featured-jobs:hover:before{
+      width: 100%;
+} 
+.featured-jobs:hover{
+      cursor: pointer;
 }
 .browse{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 30px;
-    margin: 80px 0 50px 0;
+    margin: 40px 0 50px 0;
     color: #02457A;
 }
 .job{
@@ -162,17 +176,125 @@ nav a:hover{
     transition:0.3s;
     transform: scale(1.09);
 }
-.trust{
+.desc{
+    background-color: #dddddd;
+    text-align: center;
+    padding: 30px;
+}
+.desc .title{
+    color: #02457A;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+.desc .title i{
+    margin-right: 50px;
+}
+.desc .break-line{
+    background-color: #02457A;
+    height: 2px;
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+.desc .desc_1{
+    color: #02457A;
+    font-size: 28px;
+    margin-top: 30px;
+}
+.desc .desc_2{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #02457A;
+}
+.desc-btn{
+    display: block;
+    background-color:#D6E8EE;
+    padding: 10px 0;
+    font-size: 22px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border:2px solid #02457A;
+    border-radius: 20px;
+    width: 200px;
+}
+.desc-btn a{
+    text-decoration: none;
+}
+.desc-btn a:visited{
+    color: #02457A;
+}
+.desc-btn a i{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.desc-btn:hover{
+    transition:0.3s;
+    transform: scale(1.2);
+}
+.trust-title{
     color: #02457A;
     font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+.companies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 40px 0 20px 0;
+    color: #02457A;
+}
+.company{
+    border: 2px solid #02457A;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;
+    height: auto;
+    background-color: #D6E8EE;
     text-align: center;
 }
-.trust img{
-    width: 100px;
-    margin-top: 15px;
-    margin-left: 20px;
+.company h4{
+    font-size: 25px;
+    text-decoration: underline;
+    margin:10px 0;
 }
-
+.company a{
+    text-decoration: none;
+    color: #02457A;
+}
+.company a:hover{
+    color: #97CADB;
+}
+.company i{
+    font-size: 25px;
+}
+.company p{
+    font-size: 18px;
+}
+.company:hover{
+    transition:0.3s;
+    transform: scale(1.09);
+}
+footer{
+    background-color: #c8c7c7;
+    color: #02457A;
+    padding:15px;
+    padding-left: 30px;
+}
+footer .contact-option{
+    margin-right: 20px;
+}
+footer .bold{
+    font-weight: bold;
+}
+footer .bold i{
+    margin-right: 5px;
+}
 @media(max-width:768px){
     .intro-title{
         font-size: 35px;
