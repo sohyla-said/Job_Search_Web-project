@@ -165,3 +165,33 @@ margin-right: 5px;
     transition:0.3s;
     transform: scale(1.09);
 }
+
+
+
+
+@media screen and (max-width: 630px) {
+  .job {
+      width: 100%;
+  }
+
+  .job-details h3 {
+      font-size: 16px; /* Decrease font size for job title */
+  }
+
+  .job-details h5 {
+      font-size: 14px; /* Decrease font size for company name */
+  }
+
+  .job-details p {
+      font-size: 12px; /* Decrease font size for application date */
+  }
+
+  .job-details .span {
+      font-size: 12px; /* Decrease font size for location, time, and salary */
+  }
+  .job-btn{
+    max-width:60px;
+    width:auto;
+    right: 10px;
+  }
+}
