@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Application</title>
-    <link rel="stylesheet" type="text/css" href="apply.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/apply.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="html" type="text/html" href="Home.html">
 </head>
@@ -37,7 +37,7 @@
             <span class="error-message" id="email-error"></span><br><br>
 
             <label for="phone">Phone Number:</label><br>
-            <input type="text" id="phone" name="phone"><br><br>
+            <input type="number" id="phone" name="phone"><br><br>
             <span class="error-message" id="phone-error"></span><br><br>
 
             <label for="experience">Years of Work Experience:</label><br>
@@ -57,17 +57,17 @@
             <span class="error-message" id="Date-error"></span><br><br>
 
             <label for="resume">Upload your Resume:</label><br>
-            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
+            <input type="file" id="resume" name="resume" accept=".pdf"><br><br>
             <span class="error-message" id="resume-error"></span><br><br>
 
             <label for="coverletter">Cover Letter:</label><br>
             <textarea id="coverletter" name="coverletter"></textarea><br><br>
             <span class="error-message" id="coverletter-error"></span><br><br>
 
-            <input type="submit" class="submit-button" value="Submit your Application"><br><br>
+            <input type="submit" class="submit-button" value="Submit"><br><br>
         </form>
     </div>
 
-   <script src="apply.js"></script>
+   <script src="../JS/apply.js"></script>
 </body>
 </html>
