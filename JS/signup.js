@@ -57,72 +57,92 @@ const forgotPasswordElement = document.querySelector('.forgot-password');
 forgotPasswordElement.addEventListener('click', handleForgotPasswordClick);
 
 function handleForgotPasswordClick() {
-  // 1. Create the modal container 
+  // Create the modal container
   const modalContainer = document.createElement('div');
-  modalContainer.classList.add('forgot-password-modal'); 
-  // 2. Create the modal content 
-  const modalContent = document.createElement('form');
-  modalContent.classList.add('forgot-password-modal-content'); 
+  modalContainer.classList.add('forgot-password-modal');
 
-  // 3. Create the modal header 
+  // Create the modal content
+  const modalContent = document.createElement('form');
+  modalContent.classList.add('forgot-password-modal-content');
+
+  // Create the modal header
   const modalHeader = document.createElement('h3');
   modalHeader.textContent = 'Reset Your Password';
-  modalContent.appendChild(modalHeader); 
-  // 4. Create the form for email input
+  modalContent.appendChild(modalHeader);
+
+  // Create the form for email input
   const form = document.createElement('form');
-  form.method = 'POST'; 
-  // 5. Create the email input field
+  form.method = 'POST';
+
+  // Create the email input field
   const emailField = document.createElement('input');
   emailField.type = 'email';
   emailField.name = 'email';
   emailField.placeholder = 'Enter your email address';
-  emailField.required = true; 
-  // 6. Create a submit button
+  emailField.required = true;
+
+  // Create a success message element 
+  const successMessage = document.createElement('p');
+  successMessage.classList.add('success-message');
+  successMessage.textContent = 'Success,A password reset link has been sent to your email.';
+  successMessage.style.fontSize = '1rem';
+  successMessage.style.color = '#00BFFF'; 
+  successMessage.style.display = 'none';
+  successMessage.style.margin = '-10px 0 5px';
+  modalContent.appendChild(successMessage);
+
+  // Create a submit button
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
   submitButton.textContent = 'Send Reset Link';
 
-  // 7. Append elements to form
+  // Append elements to form
   form.appendChild(emailField);
   form.appendChild(submitButton);
 
-  // 8. Append form to modal content
+  // Append form to modal content
   modalContent.appendChild(form);
 
-  // 9. Create a close button (optional)
+  // Create a close button 
   const closeButton = document.createElement('button');
   closeButton.textContent = 'Close';
-  closeButton.classList.add('close-button'); 
+  closeButton.classList.add('close-button');
   closeButton.addEventListener('click', () => {
-    modalContainer.remove(); 
+    modalContainer.remove();
   });
 
-  // 10. Append close button to modal content 
+  // Append close button to modal content
   modalContent.appendChild(closeButton);
 
-  // 11. Append modal content to modal container
+  // Append modal content to modal container
   modalContainer.appendChild(modalContent);
 
-  // 12. Add a modal overlay effect (optional)
+  // Add a modal overlay effect 
   const modalOverlay = document.createElement('div');
   modalOverlay.addEventListener('click', () => {
-    modalContainer.remove(); 
+    modalContainer.remove();
   });
-  document.body.appendChild(modalOverlay); 
+  document.body.appendChild(modalOverlay);
 
-  // 13. Append modal container to body
+  // Append modal container to body
   document.body.appendChild(modalContainer);
 
-  // 14. Handle form submission (backend logic needed)
+  // Handle form submission 
   form.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent default form submission
 
     const email = emailField.value;
     console.log(`Sending password reset email to: ${email}`);
 
-    modalContainer.remove(); // Remove modal container after submission
+    // Simulate successful email sending
+    successMessage.style.display = 'block';
+    submitButton.disabled = true; 
+    setTimeout(() => {
+      modalContainer.remove();
+    }, 3000); 
   });
 }
+
 
 function comparePasswords() {
   const passwordInput = document.getElementById('password');
@@ -206,7 +226,7 @@ function submiForm(eve) {
     return;}
 
  else if (isuser) {
-  document.location.href = "viewlist.html"; 
+  document.location.href = "availablejobs.html"; 
  } 
  else if (iscompanyAdmin) {
   document.location.href = "createdJobs.html"; 
