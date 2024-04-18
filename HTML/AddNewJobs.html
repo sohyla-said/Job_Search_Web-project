@@ -23,70 +23,70 @@
             <li><a href="appliedjobs.html">Applied Jobs</a></li>
         </ul>
     
-      </nav>
+    </nav>
     <!-- Job Opportunities (visible only for company admin) -->
-    <form action="" onsubmit="return validateForm()" id="my-form" method="post">
-        <div class="input-group">
+    <div class="input-group">
+        <form action="" onsubmit="return validateForm()" id="my-form" method="post">
             <h1>Job Opportunities</h1>
-        <label for="ID">Job ID:</label><br>
-        <input type="number" id="Job_ID" name="Job_ID" required><br><br>
-        <span class="error-message"></span>
+            <label for="ID">Job ID:</label><br>
+            <input type="number" id="Job_ID" name="Job_ID" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="job_title">Job Title:</label><br>
-        <input type="text" id="job_title" name="job_title" required><br><br>
-        <span class="error-message"></span>
+            <label for="job_title">Job Title:</label><br>
+            <input type="text" id="job_title" name="job_title" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="salary">Salary:</label><br>
-        <input type="number" id="salary" name="salary" min="1" required><br><br>
-        <span class="error-message"></span>
+            <label for="salary">Salary:</label><br>
+            <input type="number" id="salary" name="salary" min="1" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="company_name">Company Name:</label><br>
-        <input type="text" id="company_name" name="company_name" required><br><br>
-        <span class="error-message"></span>
+            <label for="company_name">Company Name:</label><br>
+            <input type="text" id="company_name" name="company_name" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="job_status">Job Status:</label><br>
-        <input type="radio" id="open" name="job_status" required>
-        <label for="open">open</label><br>
-        <span class="error-message"></span>
+            <label for="job_status">Job Status:</label><br>
+            <input type="radio" id="open" name="job_status" >
+            <label for="open">open</label><br>
+            <span class="error-message"></span>
 
-        <input type="radio" id="close" name="job_status" required>
-        <label for="close">close</label><br><br>
-        <span class="error-message"></span>
+            <input type="radio" id="close" name="job_status" >
+            <label for="close">close</label><br><br>
+            <span class="error-message"></span>
         
         
 
-        <label for="user">Created:</label><br>
-        <input id="user" type="text" name="user" required><br><br>
-        <span class="error-message"></span>
+            <label for="user">Created:</label><br>
+            <input id="user" type="text" name="user" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="years_of_experience">Years of Experience:</label><br>
-        <input type="text" id="years_of_experience" name="years_of_experience" required><br><br><br>
-        <span class="error-message"></span>
+            <label for="years_of_experience">Years of Experience:</label><br>
+            <input type="text" id="years_of_experience" name="years_of_experience" ><br><br><br>
+            <span class="error-message"></span>
 
-        <label for="location">Location:</label><br>
-        <input type="text" id="location" name="location" required><br><br>
-        <span class="error-message"></span>
+            <label for="location">Location:</label><br>
+            <input type="text" id="location" name="location" ><br><br>
+            <span class="error-message"></span>
 
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description" placeholder="Job Description" required></textarea><br><br>
-        <span class="error-message"></span>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" placeholder="Job Description" ></textarea><br><br>
+            <span class="error-message"></span>
 
-        <label for="WorkType">Work Type:</label><br>
-        <select name="WorkType" id="WorkType">
+            <label for="WorkType">Work Type:</label><br>
+            <select name="WorkType" id="WorkType">
             <option value="Hyprid">Hybrid</option>
             <option value="On-site">On-site</option>
             <option value="Remote">Remote</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Add Job Opportunity" id="submit-button">
-        <span class="error-message"></span>
-        <input type="reset" value="Reset">
-        <span class="error-message"></span>
-        </div>
-        
-    </form>
+            </select>
+            <br><br>
+            <input type="submit" value="Add Job Opportunity" id="submit-button">
+            <span class="error-message"></span>
+            <input type="reset" value="Reset">
+            <span class="error-message"></span>
+        </form>
+    </div>
     
 
 </body>
 
 </html>
+
