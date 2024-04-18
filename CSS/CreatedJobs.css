@@ -113,7 +113,6 @@ button a{
     text-decoration: none;
 }
 .job-btn{
-    width: auto;
     padding: 5px;
     margin-top: 15px;
     background-color: #d6e8ee;
@@ -137,9 +136,6 @@ i{
     transition:0.3s;
     transform: scale(1.09);
 }
-.job-btn:hover{
-    font-size: 18px;
-}
 .up-btn{
     display: block;
     margin: 40px auto;
@@ -152,12 +148,6 @@ i{
     border: 1px solid #02457a;
     color: #02457A;
 }
-/* .up-btn a{
-    color:#02457a;
-}
-.up-btn i{
-    color: #02457A;
-} */
 .up-btn:hover{
     border-radius: 10px;
     transition:0.3s;
@@ -166,4 +156,24 @@ i{
 
 a:visited{
     color: #02457a;
+}
+@media(max-width:768px){
+    .job{
+        width: 400px;
+        height: 530px;
+    }
+    .job img{
+        width: 110px;
+        height: 110px;
+    }
+    .bold{
+        font-size: 16px;
+    }
+    span, p{
+        font-size: 14px;
+    }
+    .job-btn{
+        width: 90px;
+        font-size: 14px;
+    }
 }

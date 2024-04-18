@@ -327,10 +327,35 @@ footer .bold i{
         width: 140px;
     }
     .intro-img{
-        width: 400px;
+        width: 380px;
+        margin-top: 20px;
+    }
+    .featured-jobs{
+        font-size: 25px;
     }
     .browse{
         row-gap: 30px;
     }
-
+    .job{
+        width: 250px;
+    }
+    .desc .title{
+        font-size: 32px;
+    }
+    .desc .title i{
+        margin-right: 35px;
+    }
+    .desc-btn{
+        font-size: 20px;
+        width: 180px;
+    }
+    .trust-title{
+        font-size: 25px;
+    }
+    .companies{
+        row-gap: 30px;
+    }
+    .company{
+        width: 250px;
+    }
 }
