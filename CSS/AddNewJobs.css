@@ -124,3 +124,13 @@ label {
     margin-bottom: 1px;
     font-size: 20px;
 }
+.error-message {
+    display: none; /* Initially hide error messages  */
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  
+  .error-message.active {
+    display: block; /* Show error messages on validation failure */
+  }
