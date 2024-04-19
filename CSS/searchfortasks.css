@@ -19,17 +19,15 @@ form input:focus{
     border-color: #001B48;
 }
 form {
-    width: 500px;
-    border: 2px solid #001B48;
-    height: 400px;
-    padding: 0 15px;
-    border-radius: 18px;
-    color: #001B48;
-    background-color: white;
-    margin-left: 500px;
-    margin-top: 50px;
-    margin-bottom: 5px;
-    text-align: center;
+    max-width: 500px; /* Changed to max-width for responsiveness */
+      width: 90%; /* Adjusted width for responsiveness */
+      border: 2px solid #001B48;
+      padding: 0 15px;
+      border-radius: 18px;
+      color: #001B48;
+      background-color: white;
+      margin: 50px auto; /* Center the form vertically and horizontally */
+      text-align: center;
 }
 form input[type="submit"] {
     width: auto;
@@ -58,3 +56,17 @@ label {
     font-size: 0.8rem;
     margin-top: 5px;
   }
+
+/* Media Query for responsiveness */
+    @media screen and (max-width: 800px) {
+      form {
+        width: 80%; /* Adjusted width for smaller screens */
+      }
+    }
+
+    /* Media Query for responsiveness */
+    @media screen and (max-width: 400px) {
+      form {
+        width: 90%; /* Adjusted width for even smaller screens */
+      }
+    }
