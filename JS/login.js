@@ -15,7 +15,7 @@ class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.isCompanyAdmin = is_company_admin;
+        this.isCompanyAdmin = isCompanyAdmin;
     }
 }
 
