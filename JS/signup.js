@@ -10,14 +10,6 @@ signInButton.addEventListener('click', () => {
  container.classList.remove("right-panel-active");
 });
 
-class User {
-    constructor(name, email, password, isCompanyAdmin) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.isCompanyAdmin = isCompanyAdmin;
-    }
-}
 
 function toggleCompanyField(checkbox) {
  const companyNameField = document.getElementById('company_name');
