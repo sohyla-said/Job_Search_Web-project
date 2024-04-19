@@ -10,6 +10,15 @@ signInButton.addEventListener('click', () => {
  container.classList.remove("right-panel-active");
 });
 
+class User {
+    constructor(name, email, password, isCompanyAdmin) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.isCompanyAdmin = is_company_admin;
+    }
+}
+
 function toggleCompanyField(checkbox) {
  const companyNameField = document.getElementById('company_name');
  companyNameField.disabled = !checkbox.checked;
@@ -45,8 +54,6 @@ user_Checkbox.addEventListener('change', function() {
 companyAdmin_Checkbox.addEventListener('change', function() {
  handlecheckboxChange(this);
 });
-
-
 
 function handlecheckboxChange(clicked_Checkbox) {
  const othercheckbox = document.getElementById(clicked_Checkbox.id === 'is_User' ? 'is_Company_admin' : 'is_User');
@@ -192,6 +199,10 @@ function submitForm(event) {
     alert('Please include an "@" in the email address.');
     return;
   }
+  else if (password.length < 8) {
+     alert("Password must be at least " + 8 + " characters long.");
+     return;
+  }
   else if (!isUser && !isCompanyAdmin) {
     alert('Please select either "User" or "Company Admin".');
     return;}
@@ -199,15 +210,13 @@ function submitForm(event) {
     return; 
   }
   else if (isUser) {
-  // User selected: Redirect to viewlist.html
-  document.location.href = "viewlist.html"; 
+  document.location.href = "availablejobs.html"; 
  } 
   else if (isCompanyAdmin) {
        if (!companyName) {
              alert('Please fill out this field company name.');
-             return;
-       }
-
+             return;    
+ }
   document.location.href = "createdJobs.html"; 
   }  
 signupForm.reset(); 
