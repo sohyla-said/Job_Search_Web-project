@@ -19,19 +19,22 @@
       <li><a href="appliedjobs.html">Applied Jobs</a></li>
     </ul>
   </nav>
+  <div class="input_">
+    <form id="jobSearchForm">
+      <h1>Task Search</h1>
+      <label for="jobTitle">Job Title:</label><br>
+      <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title"><br>
+      <span class="error" id="jobTitleError"></span><br><br>
+  
+      <label for="yearsofExperience">Years of Experience:</label><br>
+      <input type="text" name="yearsofExperience" placeholder="Enter years of experience"><br><br>
+  
+      <input type="submit" value="Search">
+    </form>
 
-  <form id="jobSearchForm">
-    <h1>Task Search</h1>
-    <label for="jobTitle">Job Title:</label><br>
-    <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter job title"><br>
-    <span class="error" id="jobTitleError"></span><br><br>
-
-    <label for="yearsofExperience">Years of Experience:</label><br>
-    <input type="text" name="yearsofExperience" placeholder="Enter years of experience"><br><br>
-
-    <input type="submit" value="Search">
-  </form>
+  </div>
 
   <script src="../JS/searchfortasks.js"></script>
 </body>
 </html>
+
