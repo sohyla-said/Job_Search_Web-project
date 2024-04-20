@@ -1,5 +1,6 @@
-
+//validates the form fields before submission
 function validateForm() {
+    // Retrieving form field values
     var fn = document.getElementById("firstname").value;
     var ln = document.getElementById("lastname").value;
     var e = document.getElementById("email").value;
@@ -14,6 +15,9 @@ function validateForm() {
     var wordcount = words.length;
     var isvalid = true;
 
+    // Validation checks for each field
+    // If any validation fails, an error message is displayed
+    // and the function returns false, preventing form submission
     if (fn.trim() === "") {
         document.getElementById("fn-error").innerText = "First name can't be blank";
        
@@ -110,14 +114,15 @@ function validateForm() {
     return true;
 }
 
-
+//confirm on the user before submitting
 function confirmation() {
     return confirm("Are you sure You want to submit ");
 }
 
-// Wait for the DOM content to be loaded
+// Wait for the DOM content to be loaded before executing script
 document.addEventListener('DOMContentLoaded', function() {
     // Select the form element
+   
     var form = document.querySelector('form');
     // Add event listener for form submission (event lisntener wait for an event to occur then do  a function)
     form.addEventListener('submit', function(event) {
@@ -140,14 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     resume: document.getElementById("resume").files,
                     coverletter: document.getElementById("coverletter").value
                 };
-
+   
                  // Fetch job details associated with Job ID
-                 var jobDetails = getJobDetails(formData.jobID);
+                //  var jobDetails = getJobDetails(formData.jobID);
 
                  // Store application details in local storage
                 var appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
                  appliedJobs.push({
-                jobDetails: jobDetails,
+                // jobDetails: jobDetails,
                 formData: formData,
                 appliedDate: new Date().toISOString()
 
@@ -162,35 +167,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-function getJobDetails(jobID) {
-    // Assume you have an array of job details stored in the script itself
-    var availableJobs = [
-        {
-            id: 1,
-            title: "DevOps Engineer",
-            company: "Metachain Technologies inc.",
-            location: "Egypt (remote)",
-            salary: "25 000 EGP",
-            experience: "2+ years",
-            description: "As a DevOps engineer, you'll play a crucial role in optimizing software delivery processes. Working within our team, you'll streamline operations, implement automation, and ensure seamless collaboration between development and operations."
-        },
-        {
-            id: 2,
-            title: "DevOps Consultant - IBM Cloud pak",
-            company: "IBM",
-            location: "Cairo, Egypt (on-site)",
-            salary: "30 000 EGP",
-            experience: "4+ years",
-            description: "In this role, you'll work in one of our IBM Consulting Client Innovation Centers (Delivery Centers), where we deliver deep technical and industry expertise to a wide range of public and private sector clients around the world."
-        },
-        // Add more job details objects as needed
-    ];
-
-    // Find the job with the matching ID
-    var job = availableJobs.find(function(job) {
-        return job.id == jobID;
-    });
-
-    return job;
-}
