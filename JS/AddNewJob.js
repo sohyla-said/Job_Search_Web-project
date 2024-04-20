@@ -133,3 +133,31 @@ function validateForm() {
   return isValid;
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+      
+    var form = document.querySelector('form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        if (validateForm()) {
+            
+ 
+const addformData = {
+    jobId:document.getElementById("Job_ID").value,
+    jobTitle:document.getElementById("job_title").value,
+    salary: document.getElementById("salary").value,
+    companyName:document.getElementById("company_name").value,
+    jobStatus:document.querySelector('input[name="job_status"]:checked').value,
+    user: document.getElementById("user").value,
+    yearsOfExperience: document.getElementById("years_of_experience").value,
+    location: document.getElementById("location").value,
+    description:document.getElementById("description").value,
+    workType:document.getElementById("WorkType").value,
+};
+  
+localStorage.setItem('addformData', JSON.stringify(addformData));
+  
+        }
+    });
+  });
