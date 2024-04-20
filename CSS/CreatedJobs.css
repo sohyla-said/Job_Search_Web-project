@@ -69,11 +69,11 @@ body{
     flex-wrap: wrap;
     gap: 50px 50px;
 }
-.job{
+.created-jobs .job{
     width: 500px;
     text-align: center;
     border: 2px solid #02457a;
-    height: 600px;
+    height: 620px;
     padding: 0 15px;
     border-radius: 18px;
     color: #02457a;
@@ -123,6 +123,7 @@ button a{
     font-size: 16px;
     font-weight: 500;
     border-radius: 10px;
+    cursor: pointer;
 }
 i{
     margin-right: 5px;
