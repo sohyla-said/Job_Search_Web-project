@@ -12,17 +12,7 @@ class job{
         this.jobStatus = jobStatus;
     }
 }
-// var radioInputs1 = document.querySelectorAll('input[name="jobstatus"]');
 
-// var selectedValue = null;
-
-// // Loop through the radio input elements
-// radioInputs1.forEach(function(radio) {
-//     if (radio.checked) {
-//         // Retrieve the value of the selected radio button
-//         selectedValue = radio.value;
-//     }
-// });
 //first job
 let job1 = new job("DevOps Engineer","Metachain Technologies inc.",1,"Egypt","Remote","2 weeks ago","25 000 EGP","2+","opened","As a DevOps engineer, you'll play a crucial role in optimizing software delivery processes. Working within our team, you'll streamline operations,implement automation, and ensure seamless collaboration between development and operations.");
 localStorage.setItem("job1", JSON.stringify(job1));
@@ -227,6 +217,7 @@ document.getElementById("salary6").innerHTML=salary6;
 document.getElementById("years-exp6").innerHTML=years_of_experience6;
 document.getElementById("desc6").innerHTML=description6;
 
+//delete job
 function deleteJob(jobid){
 
     // Loop through each item in local storage
@@ -241,3 +232,133 @@ function deleteJob(jobid){
     // Delete the element using the remove() method
     elementToDelete.remove();
 }
+
+//edit job
+function editJob(jobid){
+    let editedData = JSON.parse(localStorage.getItem("EditFormData"));
+    let title = editedData.job_title;
+    let company = editedData.company_name;
+    let ID = editedData.job_id;
+    let loc = editedData.location;
+    let workType = editedData.WorkType;
+    let created = editedData.created;
+    let salary = editedData.salary;
+    let years_of_experience = editedData.yearsEXP;
+    let description = editedData.job_description;
+    let status = editedData.job_status;
+    // Loop through each item in local storage
+    for (var i = 0; i < localStorage.length; i++) {
+    // Get the key for each item
+    var key = localStorage.key(i);
+    if(key[key.length-1] == jobid){
+        // if(jobid==1){
+        //     document.getElementById("job-title").innerHTML=title;
+        //     document.getElementById("company").innerHTML=company;
+        //     document.getElementById("job-id").innerHTML=ID;
+        //     document.getElementById("location").innerHTML=loc;
+        //     document.getElementById("work-type").innerHTML=workType;
+        //     document.getElementById("created").innerHTML=created;
+        //     document.getElementById("salary").innerHTML=salary;
+        //     document.getElementById("years-exp").innerHTML=years_of_experience;
+        //     document.getElementById("desc").innerHTML=description;
+        //     var radioButtons = document.getElementsByName('input[name="jobstatus"]');
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].value === status) {
+        //             radioButtons[i].checked = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // else if(jobid==2){
+        //     document.getElementById("job-title2").innerHTML=title;
+        //     document.getElementById("company2").innerHTML=company;
+        //     document.getElementById("job-id2").innerHTML=ID;
+        //     document.getElementById("location2").innerHTML=loc;
+        //     document.getElementById("work-type2").innerHTML=workType;
+        //     document.getElementById("created2").innerHTML=created;
+        //     document.getElementById("salary2").innerHTML=salary;
+        //     document.getElementById("years-exp2").innerHTML=years_of_experience;
+        //     document.getElementById("desc2").innerHTML=description;
+        //     var radioButtons = document.getElementsByName('input[name="jobstatus2"]');
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].value === status) {
+        //             radioButtons[i].checked = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // else if(jobid==3){
+        //     document.getElementById("job-title3").innerHTML=title;
+        //     document.getElementById("company3").innerHTML=company;
+        //     document.getElementById("job-id3").innerHTML=ID;
+        //     document.getElementById("location3").innerHTML=loc;
+        //     document.getElementById("work-type3").innerHTML=workType;
+        //     document.getElementById("created3").innerHTML=created;
+        //     document.getElementById("salary3").innerHTML=salary;
+        //     document.getElementById("years-exp3").innerHTML=years_of_experience;
+        //     document.getElementById("desc3").innerHTML=description;
+        //     var radioButtons = document.getElementsByName('input[name="jobstatus3"]');
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].value === status) {
+        //             radioButtons[i].checked = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // else if(jobid==4){
+        //     document.getElementById("job-title4").innerHTML=title;
+        //     document.getElementById("company4").innerHTML=company;
+        //     document.getElementById("job-id4").innerHTML=ID;
+        //     document.getElementById("location4").innerHTML=loc;
+        //     document.getElementById("work-type4").innerHTML=workType;
+        //     document.getElementById("created4").innerHTML=created;
+        //     document.getElementById("salary4").innerHTML=salary;
+        //     document.getElementById("years-exp4").innerHTML=years_of_experience;
+        //     document.getElementById("desc4").innerHTML=description;
+        //     var radioButtons = document.getElementsByName('input[name="jobstatus4"]');
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].value === status) {
+        //             radioButtons[i].checked = true;
+        //             break;
+        //         }
+        //     }
+        // }
+        // else if(jobid==5){
+        //     document.getElementById("job-title5").innerHTML=title;
+        //     document.getElementById("company5").innerHTML=company;
+        //     document.getElementById("job-id5").innerHTML=ID;
+        //     document.getElementById("location5").innerHTML=loc;
+        //     document.getElementById("work-type5").innerHTML=workType;
+        //     document.getElementById("created5").innerHTML=created;
+        //     document.getElementById("salary5").innerHTML=salary;
+        //     document.getElementById("years-exp5").innerHTML=years_of_experience;
+        //     document.getElementById("desc5").innerHTML=description;
+        //     var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
+        //     for (var i = 0; i < radioButtons.length; i++) {
+        //         if (radioButtons[i].value === status) {
+        //             radioButtons[i].checked = true;
+        //             break;
+        //         }
+        //     }
+        // }
+         if(jobid==6){
+            document.getElementById("job-title6").innerHTML=title;
+            document.getElementById("company6").innerHTML=company;
+            document.getElementById("job-id6").innerHTML=ID;
+            document.getElementById("location6").innerHTML=loc;
+            document.getElementById("work-type6").innerHTML=workType;
+            document.getElementById("created6").innerHTML=created;
+            document.getElementById("salary6").innerHTML=salary;
+            document.getElementById("years-exp6").innerHTML=years_of_experience;
+            document.getElementById("desc6").innerHTML=description;
+            var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].value === status) {
+                    radioButtons[i].checked = true;
+                    break;
+                }
+            }
+        }
+    }
+}
+} 

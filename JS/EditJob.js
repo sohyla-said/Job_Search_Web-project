@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
           };
 
           localStorage.setItem('EditFormData', JSON.stringify(EditFormData));
-
+          window.location.href = 'CreatedJobs.html';
       }
   });
 });
