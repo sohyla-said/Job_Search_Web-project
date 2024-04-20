@@ -1,72 +1,9 @@
-nav{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  background-color: #02457A;
-  width: 100%;
-  
- 
-}
-nav ul{
-  display: flex;
-  list-style-type: none;
-  margin-left:auto;
-  gap: 40px;
- 
-
-}
-.logo{ 
-width: 120px;
-height: 60px;
-margin-top: 10px;
-margin-bottom: 10px;
-margin-left: 50px;
-}
-
-nav a{
-  display:inline-block ;
-  position: relative;
-  text-decoration: none;
-  color: #D6E8EE;
-  font-weight: 800;
-  font-size: 20px;
-  
-}
-
-nav a:before, nav a:after{
-content:"";
-position: absolute;
-background-color:#D6E8EE;
-height:2px;
-width: 0;
-transition:0.5s;
-}
-nav a:after{
-left:0;
-bottom: -5px;
-
-}
-nav a:before{
-right: 0;
-top:-5px;
-}
-nav a:hover:after,
-nav a:hover:before{
-width: 100%;
-} 
-nav a:hover{
-color: #97CADB;
-
-}
-
-
-
 .userinput {
 
   background-color: white;
   border-radius: 20px;
   margin-top: 100px; 
+
   /* margin-left: 450px;
   margin-right: 450px; */
   max-width: 600px;
@@ -76,7 +13,7 @@ color: #97CADB;
   align-items: center;
   border: 3px solid #001B48;
   line-height: 15px;
-  padding: 20px;
+  padding: 30px;
   
   }
 
@@ -84,7 +21,8 @@ color: #97CADB;
 
 .userinput input,
 .userinput textarea {
-padding: 4px;
+
+padding: 5px;
 border: 2px solid #ccc;
 border-radius: 10px;
 font-size: 16px;
@@ -169,4 +107,24 @@ max-width: 400px;
   .userinput {
       margin: 100px auto; /* Center the form horizontally when the screen width is at least 1200px */
   }
+}
+
+
+footer{
+  background-color: #c8c7c7;
+  color: #02457A;
+  padding:15px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+footer .contact-option{
+  margin-right: 20px;
+}
+footer .bold{
+  font-weight: bold;
+}
+footer .bold i{
+  margin-right: 5px;
 }
