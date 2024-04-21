@@ -81,13 +81,13 @@
  
 	<div class="user-box">
   <span class="material-icons">person</span>
-  <input type="text" maxlength="40" name="username" required="">
+  <input type="text" maxlength="40" name="username" required="" id="usernames">
   <label for="username">Username</label>
 </div>
 
 <div class="user-box">
   <span class="material-icons">lock</span>
-  <input type="password"maxlength="30" name="password" id="password" required>
+  <input type="password"maxlength="30" name="password" id="passwords" required>
   <label for="password">Password</label>
 </div>
 
@@ -110,7 +110,7 @@
    <span></span>
    <span></span>
    <span></span>
-  <button type="submit" onclick="submiForm(eve)">Submit</button>
+  <button type="submit" onclick="submiForm(event)">Submit</button>
   </div>
 <span class="forgot-password">Forgot password?</span>
  </form>
