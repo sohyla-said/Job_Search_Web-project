@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayJobDetails() {
     if (selectedJob) {
       document.getElementsByClassName("job-displayed-image")[0].innerHTML = `
-      <img class="job-image" alt="${selectedJob.job_title}" src="../Images/${selectedJob.imagePath}">`;
+      <img class="job-image" alt="${selectedJob.job_title}" src="${selectedJob.imagePath}">`;
       const jobDetailsDiv =
         document.getElementsByClassName("main-details-box")[0];
       jobDetailsDiv.innerHTML = `
