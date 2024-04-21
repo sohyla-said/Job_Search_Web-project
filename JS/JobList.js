@@ -163,4 +163,4 @@ function displayAllJobs() {
   document.getElementById("Jobs").innerHTML = jobsHtml;
 }
 
-displayAllJobs();
+displayAllJobs(); 

@@ -6,7 +6,7 @@
 body{
     background-color: #ebebeb;
 }
-nav{
+/* nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@ nav a:hover:before{
 } 
 nav a:hover{
   color: #97CADB;
-}
+} */
 .intro-section{
     display: flex; 
     justify-content: space-around;

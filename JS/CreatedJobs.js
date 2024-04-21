@@ -32,7 +32,7 @@ class Job {
     }
     displayJob() {
       let job = `<div class="job" id="${this.div_id}"> 
-            <img src="/Images/${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg">
+            <img src="/Images/${this.imagePath}" alt="${this.company_name}" class="jobdisplayedimg">
             <h2>${this.job_title}</h2>
             <h3>${this.company_name}</h3>
             <ul>
@@ -193,7 +193,7 @@ function editJob(jobid) {
       let jobElement = document.getElementById(jobToBeEdited.div_id);
       if (jobElement) {
           jobElement.innerHTML = `
-              <img src="/Images/${jobToBeEdited.imagePath}" alt="${jobToBeEdited.job_id}" class="jobdisplayedimg">
+              <img src="/Images/${jobToBeEdited.imagePath}" alt="${jobToBeEdited.company_name}" class="jobdisplayedimg">
               <h2>${jobToBeEdited.job_title}</h2>
               <h3>${jobToBeEdited.company_name}</h3>
               <ul>

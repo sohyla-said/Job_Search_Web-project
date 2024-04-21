@@ -232,10 +232,11 @@ function submitForm(event) {
 
   if (isCompanyAdmin) {
     alert("Company Admin account created successfully!");
+    document.location.href = "CreatedJobs.html";
   } else {
     alert("User account created successfully!");
+    document.location.href = "JobList.html";
   }
-  document.location.href = "Home.html";
 
   signupForm.reset();
 }
@@ -244,8 +245,8 @@ const signupForm = document.querySelector(
 );
 signupForm.addEventListener("submit", submitForm);
 
-function submiForm(eve) {
-  eve.preventDefault();
+function submiForm(event) {
+  event.preventDefault();
   var isuser = document.getElementById("is_User").checked;
   var iscompanyAdmin = document.getElementById("is_Company_admin").checked;
   if (!isuser && !iscompanyAdmin) {
@@ -274,7 +275,7 @@ function submiForm(eve) {
     if (isCompanyAdmin) {
       document.location.href = "createdJobs.html";
     } else {
-      document.location.href = "availablejobs.html";
+      document.location.href = "JobList.html";
     }
   }
   signInForm.reset();

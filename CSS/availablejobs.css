@@ -7,7 +7,9 @@ body{
     background-color: #ebebeb;
 }
 
-    
+#navbar{
+    margin-bottom: 50px;
+} 
 .available-jobs{
     text-align: center;
     margin-top: 100px;

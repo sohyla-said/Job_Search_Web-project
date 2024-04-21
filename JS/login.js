@@ -165,13 +165,13 @@ function comparePasswords() {
 
 function submitForm(event) {
   event.preventDefault();
-  const isUser = document.getElementById("is_user").checked;
-  const isCompanyAdmin = document.getElementById("is_company_admin").checked;
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm_password").value;
-  const email = document.getElementById("email").value;
-  const companyName = document.getElementById("company_name").value;
+  var isUser = document.getElementById("is_user").checked;
+  var isCompanyAdmin = document.getElementById("is_company_admin").checked;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirm_password").value;
+  var email = document.getElementById("email").value;
+  var companyName = document.getElementById("company_name").value;
 
   // Check if all required fields are filled
   if (!username) {
@@ -179,6 +179,9 @@ function submitForm(event) {
     return;
   } else if (!password) {
     alert("Please fill out this field Password.");
+    return;
+  } else if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
     return;
   } else if (!confirmPassword) {
     alert("Please fill out this field confirm password.");
@@ -191,24 +194,47 @@ function submitForm(event) {
   if (!emailRegex.test(email)) {
     alert('Please include an "@" in the email address.');
     return;
-  } else if (password.length < 8) {
-    alert("Password must be at least " + 8 + " characters long.");
-    return;
   } else if (!isUser && !isCompanyAdmin) {
     alert('Please select either "User" or "Company Admin".');
     return;
   } else if (!comparePasswords()) {
     return;
   }
-  //   else if (isUser) {
-  //   document.location.href = "availablejobs.html";
-  //  }
+ 
   else if (isCompanyAdmin) {
     if (!companyName) {
       alert("Please fill out this field company name.");
       return;
     }
-    // document.location.href = "createdJobs.html";
+  }
+
+  // Create new user and store data in local storage
+  username = document.getElementById("username").value;
+  email = document.getElementById("email").value;
+  password = document.getElementById("password").value;
+  isCompanyAdmin = document.getElementById("is_company_admin").checked;
+
+  // Check if username already exists in localStorage
+  if (getUserByUsername(username)) {
+    alert(
+      "An account with this username already exists. Please Login instead."
+    );
+    return;
+  }
+
+  var newUser = new User(username, email, password, isCompanyAdmin);
+  currentUser = newUser;
+  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  localStorage.setItem(username, JSON.stringify(newUser));
+
+  if (isCompanyAdmin) {
+    alert("Company Admin account created successfully!");
+     document.location.href = "createdJobs.html";
+  } 
+  else {
+    alert("User account created successfully!");
+     document.location.href = "JobList.html";
+
   }
   signupForm.reset();
 }
@@ -217,45 +243,45 @@ const signupForm = document.querySelector(
 );
 signupForm.addEventListener("submit", submitForm);
 
-function submiForm(event) {
-  event.preventDefault();
-  const isuser = document.getElementById("is_User").checked;
-  const iscompanyAdmin = document.getElementById("is_Company_admin").checked;
-  if (!isuser && !iscompanyAdmin) {
+function submiForm(eve) {
+  eve.preventDefault();
+  var isuser = document.getElementById("is_User").checked;
+  var iscompanyAdmin = document.getElementById("is_Company_admin").checked;
+  var username = document.getElementById("usernames").value;
+  var password = document.getElementById("passwords").value;
+ if (!username) {
+    alert("Please fill out this field Username.");
+    return;
+  } 
+else if (!password) {
+    alert("Please fill out this field Password.");
+    return;
+  }
+ else if (password.length < 8) {
+    alert("invalid Password! must be at least 8 characters long.");
+    return;
+  } 
+ else if (!isuser && !iscompanyAdmin) {
     alert('Please select either "User" or "Company Admin".');
     return;
   }
-
-  //  else if (isuser) {
-  //   document.location.href = "availablejobs.html";
-  //  }
-  //  else if (iscompanyAdmin) {
-  //   document.location.href = "createdJobs.html";
-  //  }
-
-  // Fetch username and password when the form is submitted
-  var username = document.getElementById("usernames").value;
-  var password = document.getElementById("passwords").value;
-
   // Search for the username in the local storage to confirm user identity
   var userData = getUserByUsername(username);
-  var isCompanyAdmin =userData.isCompanyAdmin;
+  var isCompanyAdmin = document.getElementById("is_Company_admin").checked;
   if (!username || !password || !userData || userData.password !== password) {
     alert("Invalid username or password."); // Inform user of invalid credentials
   } else if (userData && userData.password === password) {
     currentUser = userData;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
-    if (isCompanyAdmin) {
+    if (iscompanyAdmin) {
       document.location.href = "createdJobs.html";
     } else {
-      document.location.href = "availablejobs.html";
+      document.location.href = "JobList.html";
     }
   }
   signInForm.reset();
 }
-const signInForm = document.querySelector(
-  ".form-container.sign-in-container form"
-);
+const signInForm = document.querySelector(".form-container.sign-in-container form");
 signInForm.addEventListener("submit", submiForm);
 
 function getUserByUsername(username) {
