@@ -80,13 +80,7 @@ function validateForm() {
   } else {
     document.getElementById("position-error").innerText = "";
   }
-  // if (CompanyName.trim() === "") {
-  //     document.getElementById("CompanyName-error").innerText = "Company Name field can't be empty";
 
-  //     return false;
-  // } else {
-  //     document.getElementById("CompanyName-error").innerText = "";
-  // }
 
   if (JobID.trim() === "") {
     document.getElementById("jobID-error").innerText =
@@ -136,8 +130,7 @@ function confirmation() {
   return confirm("Are you sure You want to submit ");
 }
 
-// Wait for the DOM content to be loaded before executing script
-// Wait for the DOM content to be loaded before executing script
+
 document.addEventListener("DOMContentLoaded", function () {
   // Select the form element
   var form = document.querySelector("form");
@@ -175,7 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
         JSON.stringify(appliedFormDataArray)
       );
 
-      // Redirect to the home page after submission
       window.location.href = "appliedjobs.html";
     }
   });

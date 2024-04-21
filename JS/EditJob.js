@@ -1,19 +1,7 @@
 function validateForm() {
   var form = document.getElementById("my-form");
   const errorMessages = document.querySelectorAll(".error-message");
-  /*
-  var id = document.getElementById("job_id").value;
-  var title = document.getElementById("job_title").value;
-  var salary = document.getElementById("salary").value;
-  var CompaneName = document.getElementById("company_name").value;
-  var openJob = document.getElementById("job_status_opened").value;
-  var closedJob = document.getElementById("job_status_closed").value;
-  var created = document.getElementById("created").value;
-  var YearsOfExpereience = document.getElementById("years_of_experience").value;
-  var location = document.getElementById("location").value;
-  var description = document.getElementById("job_description").value;
-  var WorkType = document.getElementById("WorkType").value;
-*/
+
 
   let isValid = true;
 
@@ -27,16 +15,7 @@ function validateForm() {
     jobIdMessage.classList.add("active");
     isValid = false;
   }
-  /*
-  if (typeof jobIdInput != "number") {
-    const jobIdMessage = document.querySelector(
-      '[name="job_id"] + .error-message'
-    );
-    jobIdMessage.textContent = "Please enter a valid Job ID.";
-    jobIdMessage.classList.add("active");
-    isValid = false;
-  }
-*/
+
   // Validate job title
   const jobTitleInput = document.getElementById("job_title");
   if (jobTitleInput.value.trim() === "") {
@@ -50,8 +29,7 @@ function validateForm() {
 
   // Validate salary
   const salaryInput = document.getElementById("salary");
-  //const salaryRegex = /^\d+(?:\.\d{2})?$/; // Allow numbers with optional decimal and two digits after the decimal
-  // if (!salaryRegex.test(salaryInput.value)) {
+
   if (salaryInput.value.trim() === "") {
     const salaryMessage = document.querySelector(
       '[name="salary"] + .error-message'
@@ -73,20 +51,7 @@ function validateForm() {
     companyNameMessage.classList.add("active");
     isValid = false;
   }
-  /*
-  // Check if a job status is selected 
-  const jobStatusRadio = document.querySelector(
-    'input[name="job_status"]:checked'
-  );
-  if (!jobStatusRadio) {
-    const jobStatusMessage = document.querySelector(
-      '[name="job_status"] + .error-message'
-    );
-    jobStatusMessage.textContent = "Please select a Job Status.";
-    jobStatusMessage.classList.add("active");
-    isValid = false;
-  }
-*/
+
   const createdInput = document.getElementById("created");
   if (createdInput.value.trim() === "") {
     const createdMessage = document.querySelector(
