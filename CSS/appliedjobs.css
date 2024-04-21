@@ -1,102 +1,22 @@
-.applied-jobs{
-  text-align: left;
-  margin-block-start: 100px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 100px 100px;
-  
- 
+
+
+#applied-jobs-container {
+  display: flex; /* Use flexbox */
+  flex-wrap: wrap; /* Allow items to wrap onto new lines */
 }
-.job{
-  width: 80%;
+
+/* Styles for job container */
+.job-container {
+  flex: 0 0 calc(33.33% - 20px);
   border: 2px solid #02457a;
-  height:200px;
-  display: flex;
-  align-items: center;
-  margin-left: 10%;
-  margin-right: 10%; 
   border-radius: 18px;
   color: #02457a;
   background-color: white;
-  margin-bottom: 1px;
-  position: relative;
-  
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
 }
-.job img{
-  width:150px;
-  height: 80px;
-  margin-right:15px ;
-  margin-top:15px;
-  margin-bottom: 15px; 
-  margin-left: 15px;
-  border-radius: 5px;
-}
-.job-details {
-          flex-grow: 1;
-          margin-top: 50px;
-     
-}
-.job-details h3, .job-details h5 {
-  margin-bottom: 5px;
-     
-}
-.job-details span {
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      /* margin-top:0; */
-      margin-bottom: 25px;
-      
-  }  
-.job-details .location{
-
-  width:20px;
-  height: 20px;
-  margin-right: 5px; 
-  margin-left: 0;
-
-}
-.job-details .time,.job-details .pound{
-
-width:15px;
-height: 15px;
-margin-right: 5px; 
-
-}
-
-.job-btn {
-  position: absolute; 
-  top: 40%;
-  right: 50px;
-  text-decoration: none;
-  background-color: #d6e8ee;
-  color:#02457a;
-  border:1px solid #02457a;
-  width: auto;
-  width: 100px;
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 50px;
-  width: 100px;
-  height: 30px;
-  
-
-}
-.job-btn a{
-  text-decoration: none;
-  color: #02457a;
-}
-
-
-.job-btn:hover{
-  background-color: #97CADB; 
-  
-}
-.job-btn a:hover{
-  color: white;
-}
-.job:hover{
+.job-container:hover {
   background-color: #02457a;
   color:#d6e8ee;
   transition:0.3s;
@@ -104,34 +24,38 @@ margin-right: 5px;
 }
 
 
-
-
-@media screen and (max-width: 630px) {
-.job {
-    width: 100%;
+.jobdetails {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.job-details h3 {
-    font-size: 16px; /* Decrease font size for job title */
+.jobdetails p {
+  font-weight: 600;
+  font-size: 25px; 
+  
 }
 
-.job-details h5 {
-    font-size: 14px; /* Decrease font size for company name */
+.jobdetails ul {
+  list-style-type: none;
+  font-style: bold;
+  font-weight: 300;
+  font-size: 35px; 
+  padding: 0;
 }
 
-.job-details p {
-    font-size: 12px; /* Decrease font size for application date */
+.jobdetails ul li {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 900;
+  font-style: bold;
+
+}
+.jobdetails li span {
+  font-weight: normal;
+
 }
 
-.job-details .span {
-    font-size: 12px; /* Decrease font size for location, time, and salary */
-}
-.job-btn{
-  max-width:60px;
-  width:auto;
-  right: 10px;
-}
-}
+
 
 
 
