@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("With:", JobID);
     return job.job_id === JobID;
   });
+  let addedJobs = JSON.parse(localStorage.getItem("addformData")) || [];
 
-  // Display function Customize it as you like this is just the layout
   function displayJobDetails() {
     if (selectedJob) {
       document.getElementsByClassName("job-displayed-image")[0].innerHTML = `
@@ -40,11 +40,31 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-    } else {
+    } else if (addedJobs.length === 0) {
       const jobDetailsDiv =
         document.getElementsByClassName("main-details-box")[0];
       jobDetailsDiv.innerHTML = "<p>Sorry, job not found.</p>";
     }
+    addedJobs.forEach((addedJob) => {
+      const addedJobDiv = document.createElement("div");
+      addedJobDiv.classList.add("added-job");
+      addedJobDiv.innerHTML = `
+      <img src="${addedJob.imagePath}" alt="${addedJob.jobTitle}" class="job-image">
+      <h2>${addedJob.jobTitle}</h2>
+      <p><span>Location: </span> ${addedJob.location}</p>
+      <p><span>Company: </span> ${addedJob.companyName}</p>
+      <p><span>Salary: </span> $${addedJob.salary}</p>
+      <p><span>Job Status: </span> ${addedJob.jobStatus}</p>
+      <p><span>Years of Experience: </span> ${addedJob.yearsOfExperience}</p>
+      <p><span>Work Type: </span>${addedJob.workType}</p>
+      <p><span>Created: </span>${addedJob.user}</p>
+      <p id="job-description"><span>Description: </span>${addedJob.description}</p>
+      <button class="apply-button">Apply</button>
+    `;
+      document
+        .getElementsByClassName("main-details-box")[0]
+        .appendChild(addedJobDiv);
+    });
   }
 
   displayJobDetails();
