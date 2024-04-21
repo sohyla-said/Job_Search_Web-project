@@ -28,3 +28,4 @@ class Job {
         document.getElementById("main-job-container").innerHTML += job;
     }
 }
+ 
