@@ -26,7 +26,7 @@ class Job {
   }
 
   displayJob() {
-    let job = `<div class="job-container"> 
+    return `<div class="job-container"> 
         <div class="jobdetails">
             <p>Job Details:</p>
              <ul>
@@ -38,16 +38,18 @@ class Job {
                 <li>Location: ${this.location}</li>
             </ul>
         </div>
-           <div class="jobimg">Image: <br><a href="JobDetails.html?id=${this.job_id}">
-           <img src="/Images/${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg"></a>
+        <div class="jobimg">Click to view its details: <br><a href="JobDetails.html?id=${this.job_id}">View Details</a></div>
            </div>
           </div>`;
-    document.getElementById("Jobs").innerHTML += job;
   }
 }
 
-// Here wer retrieve Jobs array from local storage or create an empty array if not found
 let Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
+
+function addJobToLocalStorage(job) {
+  Jobs.push(job);
+  localStorage.setItem("AllJobs", JSON.stringify(Jobs));
+}
 
 let job1 = new Job(
   1,
@@ -114,16 +116,51 @@ let job5 = new Job(
   "5 Weeks ago",
   "../Images/smurge.jpeg"
 );
-
-Jobs = [job1, job2, job3, job4, job5];
-localStorage.setItem("AllJobs", JSON.stringify(Jobs));
-
+if (Jobs.length === 0) {
+  addJobToLocalStorage(job1);
+  addJobToLocalStorage(job2);
+  addJobToLocalStorage(job3);
+  addJobToLocalStorage(job4);
+  addJobToLocalStorage(job5);
+}
 function displayAllJobs() {
   document.getElementById("Jobs").innerHTML = "";
-  Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
-  Jobs.forEach((job) => {
-    job.displayJob();
+  let jobsHtml = "";
+  Jobs.forEach((jobData) => {
+    let job = new Job(
+      jobData.job_id,
+      jobData.job_title,
+      jobData.salary,
+      jobData.company_name,
+      jobData.job_status,
+      jobData.job_description,
+      jobData.location,
+      jobData.years_of_experience,
+      jobData.WorkType,
+      jobData.created,
+      jobData.imagePath
+    );
+    jobsHtml += job.displayJob();
   });
+  let addedJobs = JSON.parse(localStorage.getItem("addformData")) || [];
+  addedJobs.forEach((jobData) => {
+    let job = new Job(
+      jobData.jobId,
+      jobData.jobTitle,
+      jobData.salary,
+      jobData.companyName,
+      jobData.jobStatus,
+      jobData.description,
+      jobData.location,
+      jobData.yearsOfExperience,
+      jobData.WorkType,
+      jobData.user,
+      jobData.imagePath
+    );
+    jobsHtml += job.displayJob();
+  });
+
+  document.getElementById("Jobs").innerHTML = jobsHtml;
 }
 
 displayAllJobs();
