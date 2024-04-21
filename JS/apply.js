@@ -74,6 +74,13 @@ function validateForm() {
     } else {
         document.getElementById("position-error").innerText = "";
     }
+    // if (CompanyName.trim() === "") {
+    //     document.getElementById("CompanyName-error").innerText = "Company Name field can't be empty";
+       
+    //     return false;
+    // } else {
+    //     document.getElementById("CompanyName-error").innerText = "";
+    // }
 
     if (JobID.trim() === "") {
         document.getElementById("jobID-error").innerText = "Job ID field can't be empty";
@@ -120,50 +127,42 @@ function confirmation() {
 }
 
 // Wait for the DOM content to be loaded before executing script
+// Wait for the DOM content to be loaded before executing script
 document.addEventListener('DOMContentLoaded', function() {
     // Select the form element
-   
     var form = document.querySelector('form');
-    // Add event listener for form submission (event lisntener wait for an event to occur then do  a function)
+    // Add event listener for form submission
     form.addEventListener('submit', function(event) {
-        event.preventDefault();// Prevent default form submission behavior
+        event.preventDefault(); // Prevent default form submission behavior
         
-         // Check if form validation and confirmation are successful
+        // Check if form validation and confirmation are successful
         if (validateForm() && confirmation()) {
-            form.submit();// Submit the form
+            // Capture form data
+            var applyformData = {
+                firstname: document.getElementById("firstname").value,
+                lastname: document.getElementById("lastname").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                experience: document.getElementById("experience").value,
+                position: document.getElementById("position").value,
+                CompanyName: document.getElementById("CompanyName").value,
+                jobID: document.getElementById("jobID").value,
+                date: document.getElementById("Date").value,
+                resume: document.getElementById("resume").files,
+                coverletter: document.getElementById("coverletter").value
+            };
 
-                 // Capture form data
-                 var formData = {
-                    firstname: document.getElementById("firstname").value,
-                    lastname: document.getElementById("lastname").value,
-                    email: document.getElementById("email").value,
-                    phone: document.getElementById("phone").value,
-                    experience: document.getElementById("experience").value,
-                    position: document.getElementById("position").value,
-                    jobID: document.getElementById("jobID").value,
-                    Date: document.getElementById("Date").value,
-                    resume: document.getElementById("resume").files,
-                    coverletter: document.getElementById("coverletter").value
-                };
-   
-                 // Fetch job details associated with Job ID
-                //  var jobDetails = getJobDetails(formData.jobID);
+            // Get existing appliedformData array from localStorage or create an empty array
+            var appliedFormDataArray = JSON.parse(localStorage.getItem('appliedFormDataArray')) || [];
 
-                 // Store application details in local storage
-                var appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
-                 appliedJobs.push({
-                // jobDetails: jobDetails,
-                formData: formData,
-                appliedDate: new Date().toISOString()
+            // Add the current form data to the array
+            appliedFormDataArray.push(applyformData);
 
-
-            });
-            localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+            // Store the updated array back to localStorage
+            localStorage.setItem('appliedFormDataArray', JSON.stringify(appliedFormDataArray));
 
             // Redirect to the home page after submission
-            window.location.href = 'Home.html';
-
-
+            window.location.href = 'appliedjobs.html';
         }
     });
 });
