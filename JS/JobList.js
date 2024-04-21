@@ -1,5 +1,3 @@
-// This file is used to display the job data as job objects
-
 class Job {
   constructor(
     job_id,
@@ -47,6 +45,10 @@ class Job {
     document.getElementById("Jobs").innerHTML += job;
   }
 }
+
+// Here wer retrieve Jobs array from local storage or create an empty array if not found
+let Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
+
 let job1 = new Job(
   1,
   "DevOps Engineer",
@@ -54,7 +56,7 @@ let job1 = new Job(
   "Metachain Technologies inc.",
   "Open",
   "As a DevOps engineer, you'll play a crucial role in optimizing software delivery processes. Working within our team, you'll streamline operations, implement automation, and ensure seamless collaboration between development and operations. Your efforts will drive innovation and efficiency, delivering impactful solutions to a diverse range of clients globally.",
-  " Cairo, Egypt",
+  "Cairo, Egypt",
   3,
   "On-site",
   "2 Weeks ago",
@@ -113,18 +115,15 @@ let job5 = new Job(
   "../Images/smurge.jpeg"
 );
 
-localStorage.setItem("job1", JSON.stringify(job1));
-localStorage.setItem("job2", JSON.stringify(job2));
-localStorage.setItem("job3", JSON.stringify(job3));
-localStorage.setItem("job4", JSON.stringify(job4));
-localStorage.setItem("job5", JSON.stringify(job5));
-
-const Jobs = [job1, job2, job3, job4, job5];
+Jobs = [job1, job2, job3, job4, job5];
 localStorage.setItem("AllJobs", JSON.stringify(Jobs));
+
 function displayAllJobs() {
   document.getElementById("Jobs").innerHTML = "";
+  Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
   Jobs.forEach((job) => {
     job.displayJob();
   });
 }
+
 displayAllJobs();
