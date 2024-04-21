@@ -1,4 +1,6 @@
 // Retrieve applied jobs from local storage
+
+
 const appliedJobs = JSON.parse(localStorage.getItem("appliedFormDataArray"));
 
 class Job {
@@ -16,9 +18,9 @@ class Job {
       <div class="jobdetails">
         <p>Job Details:</p>
         <ul>
-          <li>Title: ${position}</li>
-          <li>Company: ${CompanyName}</li>
-          <li>Date: ${date}</li>
+          <li>Title: <span>${position}</span></li>
+          <li>Company: <span>${CompanyName}</span></li>
+          <li>Date: <span>${date}</span></li>
         </ul>
       </div>
     `;
