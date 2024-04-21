@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
       jobDetailsDiv.innerHTML = `
                 <div class="job-details-container">
                     <h2>${selectedJob.job_title}</h2>
-                    <img src="/imgs/${selectedJob.imagePath}" alt="${selectedJob.company_name}" class="job-details-img">
+                  
                     <div class="job-details">
                         <h2>Job Details</h2>
-                        <p>Location: ${selectedJob.location}</p>
-                        <p>Company: ${selectedJob.company_name}</p>
-                        <p>Salary: $${selectedJob.salary}</p>
-                        <p>Job Status: ${selectedJob.job_status}</p>
-                        <p>Years of Experience: ${selectedJob.years_of_experience}</p>
-                        <p>Work Type: ${selectedJob.WorkType}</p>
-                        <p>Created: ${selectedJob.created}</p>
-                        <p>Description: ${selectedJob.job_description}</p>
+                        <p><span>Location: </span> ${selectedJob.location}</p>
+                        <p><span>Company: </span> ${selectedJob.company_name}</p>
+                        <p><span>Salary: </span> $${selectedJob.salary}</p>
+                        <p><span>Job Status: </span> ${selectedJob.job_status}</p>
+                        <p><span>Years of Experience: </span> ${selectedJob.years_of_experience}</p>
+                        <p><span>Work Type: </span>${selectedJob.WorkType}</p>
+                        <p><span>Created: </span>${selectedJob.created}</p>
+                        <p id="job-description"><span>Description: </span>${selectedJob.job_description}</p>
                         <button class="apply-button">Apply</button>
                     </div>
                 </div>
