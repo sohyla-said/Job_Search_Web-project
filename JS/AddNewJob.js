@@ -144,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
       addformData.push(newFormData);
 
       localStorage.setItem("addformData", JSON.stringify(addformData));
+      alert("Job has been added successfully!");
+      location.reload();
     }
   });
 });
