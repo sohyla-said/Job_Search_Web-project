@@ -233,7 +233,7 @@ function submitForm(event) {
   } 
   else {
     alert("User account created successfully!");
-     document.location.href = "availablejobs.html";
+     document.location.href = "JobList.html";
 
   }
   signupForm.reset();
@@ -276,7 +276,7 @@ else if (!password) {
     if (iscompanyAdmin) {
       document.location.href = "createdJobs.html";
     } else {
-      document.location.href = "availablejobs.html";
+      document.location.href = "JobList.html";
     }
   }
   signInForm.reset();
