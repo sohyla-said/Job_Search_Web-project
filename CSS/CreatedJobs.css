@@ -119,18 +119,12 @@ button a{
     color:#02457a;
     border:1px solid #02457a;
     width: auto;
-    width: 100px;
+    width: 140px;
     font-size: 16px;
     font-weight: 500;
     border-radius: 10px;
     cursor: pointer;
 }
-/* #edit{
-    margin: auto;
-}
-.goToEdit{
-    width: auto;
-} */
 i{
     margin-right: 5px;
 }

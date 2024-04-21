@@ -31,7 +31,7 @@ class Job {
       this.imagePath = imagePath;
     }
     displayJob() {
-      let job = `<div class="job"> 
+      let job = `<div class="job" id="${this.div_id}"> 
             <img src="/Images/${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg">
             <h2>${this.job_title}</h2>
             <h3>${this.company_name}</h3>
@@ -45,8 +45,10 @@ class Job {
                 <li><span class="bold">Job Status: </span><span>${this.job_status}</span></li>
                 <li><span class="bold">About the Job: </span><span>${this.job_description}</span></li>
             </ul>
-            <button class="job-btn" onclick="editJob(${this.job_id})"><a href=""# >Edit job<i class="fa-regular fa-pen-to-square"></i></a></button>
-            <button class="job-btn" onclick="deleteJob(${this.job_id})">Delete Job</button>
+            <p class="editP"><i class="fa-solid fa-triangle-exclamation"></i>Please click on <span class="bold">Edit Job</span> to show the edits</p>
+            <button class="job-btn" class="goToEdit"><a href="EditJob.html">Go to Edit job<i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
+            <button class="job-btn" onclick="editJob(${this.job_id})">Edit job<i class="fa-regular fa-pen-to-square"></i></button>
+            <button class="job-btn" onclick="deleteJob(${this.job_id})">Delete Job<i class="fa-regular fa-trash-can"></i></button>
             </div>`;
       document.getElementById("created-jobs").innerHTML+=job;
       console.log(this.div_id)
@@ -140,41 +142,75 @@ class Job {
   }
   displayAllJobs();
   
+//Delete a job
+function deleteJob(jobid) {
+  // Remove the job from local storage
+  localStorage.removeItem(`job${jobid}`);
 
-function deleteJob(jobid){
+  // Remove the job from the AllJobs array
+  let allJobsArray = JSON.parse(localStorage.getItem("AllJobs"));
+  let updatedJobsArray = allJobsArray.filter(job => job.job_id !== jobid);
 
-    // Remove the job from localStorage
-    for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-        if(key[key.length-1] == jobid){
-            localStorage.removeItem(key);
-        }
-    }
+  // Update the AllJobs array in local storage
+  localStorage.setItem("AllJobs", JSON.stringify(updatedJobsArray));
 
-    // Remove the job from the AllJobs array
-    let allJobsArray = JSON.parse(localStorage.getItem("AllJobs"));
-    for (var i = 0; i < allJobsArray.length; i++) {
-        if(allJobsArray[i].job_id == jobid){
-            allJobsArray.splice(i,1);
-        }
-    }
-    
-    // Update the AllJobs array in localStorage
-    localStorage.setItem("AllJobs", JSON.stringify(allJobsArray));
-
-    // Remove the job from the displayed jobs on the page if needed
-    // var elementToDelete = document.getElementById(jobid);
-    // elementToDelete.remove();
-    // var jobElement = document.getElementById(allJobsArray.find(job => job.job_id === jobid).div_id); // Find the job element by div_id
-    // if (jobElement) {
-    //     jobElement.remove();
-    // }
-var jobElement = document.getElementById(jobid);
-    if (jobElement) {
-        jobElement.remove();
-    }
+  // If needed, remove the job from the displayed jobs on the page
+  let jobElement = document.getElementById(jobid);
+  if (jobElement) {
+      jobElement.remove();
+  }
 }
 
-function editJob(jobid){
-  
+//Edit a job
+function updateObject(objToUpdate, newObj) {
+  for (let key in newObj) {
+      if (newObj.hasOwnProperty(key)) {
+          objToUpdate[key] = newObj[key];
+      }
+  }
+}
+function editJob(jobid) {
+  let editedData = JSON.parse(localStorage.getItem("EditFormData"));
+  let allJobsArray = JSON.parse(localStorage.getItem("AllJobs"));
+
+  // Find the job to be edited in the AllJobs array
+  let jobToBeEdited = allJobsArray.find(job => job.job_id === jobid);
+
+  if (jobToBeEdited && editedData) {
+      // Update the job object with the edited data
+      updateObject(jobToBeEdited, editedData);
+
+      // Update the job in local storage
+      localStorage.setItem(`job${jobid}`, JSON.stringify(jobToBeEdited));
+
+      // Update the AllJobs array in local storage
+      localStorage.setItem("AllJobs", JSON.stringify(allJobsArray));
+
+      // If needed, update the displayed job on the page
+      // For example, if you want to update the job displayed with the edited data
+
+      // Find the job element by its div_id and update its inner HTML
+      let jobElement = document.getElementById(jobToBeEdited.div_id);
+      if (jobElement) {
+          jobElement.innerHTML = `
+              <img src="/Images/${jobToBeEdited.imagePath}" alt="${jobToBeEdited.job_id}" class="jobdisplayedimg">
+              <h2>${jobToBeEdited.job_title}</h2>
+              <h3>${jobToBeEdited.company_name}</h3>
+              <ul>
+                  <li><span class="bold">Job ID: </span><span>${jobToBeEdited.job_id}</span></li>
+                  <li><i class="fa-solid fa-location-dot"></i><span class="bold">Location: </span><span>${jobToBeEdited.location}</span></li>
+                  <li><span class="bold">Work Type: </span><span>${jobToBeEdited.WorkType}</span></li>
+                  <li><span class="bold">Created: </span><span>${jobToBeEdited.created}</span></li>
+                  <li><i class="fa-solid fa-sack-dollar"></i><span class="bold">Salary: </span><span>${jobToBeEdited.salary}</span></li>
+                  <li><span class="bold">Years of Experience: </span><span>${jobToBeEdited.years_of_experience}</span></li>
+                  <li><span class="bold">Job Status: </span><span>${jobToBeEdited.job_status}</span></li>
+                  <li><span class="bold">About the Job: </span><span>${jobToBeEdited.job_description}</span></li>
+              </ul>
+              <p class="editP"><i class="fa-solid fa-triangle-exclamation"></i>Please click on <span class="bold">Edit Job</span> to show the edits</p>
+              <button class="job-btn" class="goToEdit"><a href="EditJob.html">Go to Edit job<i class="fa-solid fa-arrow-up-right-from-square"></i></a></button>
+              <button class="job-btn" onclick="editJob(${jobToBeEdited.job_id})">Edit job<i class="fa-regular fa-pen-to-square"></i></button>
+              <button class="job-btn" onclick="deleteJob(${jobToBeEdited.job_id})">Delete Job<i class="fa-regular fa-trash-can"></i></button>
+          `;
+      }
+  }
 }
