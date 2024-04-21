@@ -62,14 +62,14 @@ body{
 #navbar a:hover{
   color: #97CADB;
 }
-.created-jobs{
+#created-jobs{
     margin-top: 50px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px 50px;
 }
-.created-jobs .job{
+#created-jobs .job{
     width: 500px;
     text-align: center;
     border: 2px solid #02457a;
@@ -79,7 +79,7 @@ body{
     color: #02457a;
     background-color: white;
 }
-.job img{
+.jobdisplayedimg{
     width: 130px;
     height: 130px;
     margin-top:15px;
@@ -96,7 +96,7 @@ body{
     font-weight: bold;
     font-size: 18px;
 }
-.created-jobs::after{
+#created-jobs::after{
     content:"";
     width: 500px;
 }
@@ -125,19 +125,19 @@ button a{
     border-radius: 10px;
     cursor: pointer;
 }
-#edit{
+/* #edit{
     margin: auto;
 }
 .goToEdit{
     width: auto;
-}
+} */
 i{
     margin-right: 5px;
 }
 .job-btn i, .up-btn i{
     margin-left: 5px;
 }
-.job:hover{
+#created-jobs .job:hover{
     background-color: #02457a;
     color:#d6e8ee;
     transition:0.3s;

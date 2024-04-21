@@ -1,364 +1,180 @@
-class job{
-    constructor(jobTitle, company, jobID, location, workType,created, salary, yearsEXP, jobStatus, desc){
-        this.jobTitle = jobTitle;
-        this.company = company;
-        this.jobID = jobID;
-        this.salary = salary;
-        this.yearsEXP = yearsEXP;
-        this.desc = desc;
-        this.location = location;
-        this.workType = workType;
-        this.created = created;
-        this.jobStatus = jobStatus;
-    }
-}
 
-//first job
-let job1 = new job("DevOps Engineer","Metachain Technologies inc.",1,"Egypt","Remote","2 weeks ago","25 000 EGP","2+","opened","As a DevOps engineer, you'll play a crucial role in optimizing software delivery processes. Working within our team, you'll streamline operations,implement automation, and ensure seamless collaboration between development and operations.");
-localStorage.setItem("job1", JSON.stringify(job1));
-let parsedJob1 = JSON.parse(localStorage.getItem("job1"));
-var radioButtons = document.getElementsByName('input[name="jobstatus"]');
-var desiredValue = parsedJob1.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
-    }
-}
-let title = parsedJob1.jobTitle;
-let company = parsedJob1.company;
-let ID = parsedJob1.jobID;
-let loc = parsedJob1.location;
-let workType = parsedJob1.workType;
-let created = parsedJob1.created;
-let salary = parsedJob1.salary;
-let years_of_experience = parsedJob1.yearsEXP;
-let description = parsedJob1.desc;
-document.getElementById("job-title").innerHTML=title;
-document.getElementById("company").innerHTML=company;
-document.getElementById("job-id").innerHTML=ID;
-document.getElementById("location").innerHTML=loc;
-document.getElementById("work-type").innerHTML=workType;
-document.getElementById("created").innerHTML=created;
-document.getElementById("salary").innerHTML=salary;
-document.getElementById("years-exp").innerHTML=years_of_experience;
-document.getElementById("desc").innerHTML=description;
 
-//second job
-let job2 = new job("DevOps Consultant - IBM Cloud pak","IBM",2,"Cairo Egypt","on-site","3 weeks ago","30 000 EGP","4+","closed","About the job :</span> this role, you'll work in one of our IBM Consulting Client Innovation Centers (Delivery Centers), where we deliver deep technical and industry expertise to a wide range of public and private sector clients around the world.");
-localStorage.setItem("job2", JSON.stringify(job2));
-let parsedJob2 = JSON.parse(localStorage.getItem("job2"));
-var radioButtons = document.getElementsByName('input[name="jobstatus2"]');
-var desiredValue = parsedJob2.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
-    }
-}
-let title2 = parsedJob2.jobTitle;
-let company2 = parsedJob2.company;
-let ID2 = parsedJob2.jobID;
-let loc2 = parsedJob2.location;
-let workType2 = parsedJob2.workType;
-let created2 = parsedJob2.created;
-let salary2 = parsedJob2.salary;
-let years_of_experience2 = parsedJob2.yearsEXP;
-let description2 = parsedJob2.desc;
-document.getElementById("job-title2").innerHTML=title2;
-document.getElementById("company2").innerHTML=company2;
-document.getElementById("job-id2").innerHTML=ID2;
-document.getElementById("location2").innerHTML=loc2;
-document.getElementById("work-type2").innerHTML=workType2;
-document.getElementById("created2").innerHTML=created2;
-document.getElementById("salary2").innerHTML=salary2;
-document.getElementById("years-exp2").innerHTML=years_of_experience2;
-document.getElementById("desc2").innerHTML=description2;
+// This file is used to display the job data as job objects
 
-//third job
-let job3 = new job("Software Testing Engineer","Valeo",3,"Zayed Egypt","on-site","2 weeks ago","20 000 EGP","2+","opened","As a Software Testing Engineer, you'll play a pivotal role in ensuring the quality and reliability of our software products.You'll design and execute test cases, perform thorough analysis, and report any issues or defects to the development team.");
-localStorage.setItem("job3", JSON.stringify(job3));
-let parsedJob3 = JSON.parse(localStorage.getItem("job3"));
-var radioButtons = document.getElementsByName('input[name="jobstatus3"]');
-var desiredValue = parsedJob3.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
+class Job {
+    constructor(
+      div_id,
+      job_id,
+      job_title,
+      salary,
+      company_name,
+      job_status,
+      job_description,
+      location,
+      years_of_experience,
+      WorkType,
+      created,
+      imagePath
+    ) {
+      this.div_id=div_id;
+      this.job_id = job_id;
+      this.job_title = job_title;
+      this.salary = salary;
+      this.company_name = company_name;
+      this.job_status = job_status;
+      this.job_description = job_description;
+      this.location = location;
+      this.years_of_experience = years_of_experience;
+      this.WorkType = WorkType;
+      this.created = created;
+      this.imagePath = imagePath;
     }
-}
-let title3 = parsedJob3.jobTitle;
-let company3 = parsedJob3.company;
-let ID3 = parsedJob3.jobID;
-let loc3 = parsedJob3.location;
-let workType3 = parsedJob3.workType;
-let created3 = parsedJob3.created;
-let salary3 = parsedJob3.salary;
-let years_of_experience3 = parsedJob3.yearsEXP;
-let description3 = parsedJob3.desc;
-document.getElementById("job-title3").innerHTML=title3;
-document.getElementById("company3").innerHTML=company3;
-document.getElementById("job-id3").innerHTML=ID3;
-document.getElementById("location3").innerHTML=loc3;
-document.getElementById("work-type3").innerHTML=workType3;
-document.getElementById("created3").innerHTML=created3;
-document.getElementById("salary3").innerHTML=salary3;
-document.getElementById("years-exp3").innerHTML=years_of_experience3;
-document.getElementById("desc3").innerHTML=description3;
-
-//fourth job
-let job4 = new job("principal Software Engineer","Sumerge",4,"Cairo Egypt","hybrid","2 weeks ago","40 000 EGP","3+","opened","As a Principal Software Engineer, you'll be a key leader in driving technical excellence and innovation within our organization.Your role involves providing strategic direction, architectural guidance, and mentorship to the development team.");
-localStorage.setItem("job4", JSON.stringify(job4));
-let parsedJob4 = JSON.parse(localStorage.getItem("job4"));
-var radioButtons = document.getElementsByName('input[name="jobstatus4"]');
-var desiredValue = parsedJob4.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
+    displayJob() {
+      let job = `<div class="job"> 
+            <img src="/Images/${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg">
+            <h2>${this.job_title}</h2>
+            <h3>${this.company_name}</h3>
+            <ul>
+                <li><span class="bold">Job ID: </span><span>${this.job_id}</span></li>
+                <li><i class="fa-solid fa-location-dot"></i><span class="bold">Location: </span><span>${this.location}</span></li>
+                <li><span class="bold">Work Type: </span><span>${this.WorkType}</span></li>
+                <li><span class="bold">Created: </span><span>${this.created}</span></li>
+                <li><i class="fa-solid fa-sack-dollar"></i><span class="bold">Xalary: </span><span>${this.salary}</span></li>
+                <li><span class="bold">Years of Experiance: </span><span>${this.years_of_experience}</span></li>
+                <li><span class="bold">Job Status: </span><span>${this.job_status}</span></li>
+                <li><span class="bold">About the Job: </span><span>${this.job_description}</span></li>
+            </ul>
+            <button class="job-btn" onclick="editJob(${this.job_id})"><a href=""# >Edit job<i class="fa-regular fa-pen-to-square"></i></a></button>
+            <button class="job-btn" onclick="deleteJob(${this.job_id})">Delete Job</button>
+            </div>`;
+      document.getElementById("created-jobs").innerHTML+=job;
+      console.log(this.div_id)
     }
-}
-let title4 = parsedJob4.jobTitle;
-let company4 = parsedJob4.company;
-let ID4 = parsedJob4.jobID;
-let loc4 = parsedJob4.location;
-let workType4 = parsedJob4.workType;
-let created4 = parsedJob4.created;
-let salary4 = parsedJob4.salary;
-let years_of_experience4 = parsedJob4.yearsEXP;
-let description4 = parsedJob4.desc;
-document.getElementById("job-title4").innerHTML=title4;
-document.getElementById("company4").innerHTML=company4;
-document.getElementById("job-id4").innerHTML=ID4;
-document.getElementById("location4").innerHTML=loc4;
-document.getElementById("work-type4").innerHTML=workType4;
-document.getElementById("created4").innerHTML=created4;
-document.getElementById("salary4").innerHTML=salary4;
-document.getElementById("years-exp4").innerHTML=years_of_experience4;
-document.getElementById("desc4").innerHTML=description4;
+  }
 
-//fifth job
-let job5 = new job("Full Stack Developer","Sumerge",5,"Cairo Egypt","hybrid","2 weeks ago","40 000 EGP","3+","opened","As a Principal Software Engineer, you'll be a key leader in driving technical excellence and innovation within our organization.Your role involves providing strategic direction, architectural guidance, and mentorship to the development team.");
-localStorage.setItem("job5", JSON.stringify(job5));
-let parsedJob5 = JSON.parse(localStorage.getItem("job5"));
-var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
-var desiredValue = parsedJob4.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
-    }
-}
-let title5 = parsedJob5.jobTitle;
-let company5 = parsedJob5.company;
-let ID5 = parsedJob5.jobID;
-let loc5 = parsedJob5.location;
-let workType5 = parsedJob5.workType;
-let created5 = parsedJob5.created;
-let salary5 = parsedJob5.salary;
-let years_of_experience5 = parsedJob5.yearsEXP;
-let description5 = parsedJob5.desc;
-document.getElementById("job-title5").innerHTML=title5;
-document.getElementById("company5").innerHTML=company5;
-document.getElementById("job-id5").innerHTML=ID5;
-document.getElementById("location5").innerHTML=loc5;
-document.getElementById("work-type5").innerHTML=workType5;
-document.getElementById("created5").innerHTML=created5;
-document.getElementById("salary5").innerHTML=salary5;
-document.getElementById("years-exp5").innerHTML=years_of_experience5;
-document.getElementById("desc5").innerHTML=description5;
+  let job1 = new Job(
+    1,
+    1,
+    "DevOps Engineer",
+    25000,
+    "Metachain Technologies inc.",
+    "Open",
+    "As a DevOps engineer, you'll play a crucial role in optimizing software delivery processes. Working within our team, you'll streamline operations, implement automation, and ensure seamless collaboration between development and operations.",
+    " Cairo, Egypt",
+    3,
+    "On-site",
+    "2 Weeks ago",
+    "../Images/Metachain.webp"
+  );
+  let job2 = new Job(
+    2,
+    2,
+    "DevOps Consultant",
+    40000,
+    "IBM Cloud pak",
+    "Open",
+    "In this role, you'll work in one of our IBM Consulting Client Innovation Centers (Delivery Centers), where we deliver deep technical and industry expertise to a wide range of public and private sector clients around the world. Our delivery centers offer our clients locally based skills and technical expertise to drive innovation and adoption of new technology.",
+    "Giza, Egypt",
+    5,
+    "Hybrid",
+    "2 Weeks ago",
+    "../Images/IBM.jpeg"
+  );
+  let job3 = new Job(
+    3,
+    3,
+    "Software Testing Engineer",
+    35000,
+    "Valeo",
+    "Open",
+    "As a Software Testing Engineer, you'll play a pivotal role in ensuring the quality and reliability of our software products. You'll design and execute test cases, perform thorough analysis, and report any issues or defects to the development team.",
+    "Cairo, Egypt",
+    3,
+    "Hybrid",
+    "6 Weeks ago",
+    "../Images/valeo.png"
+  );
+  let job4 = new Job(
+    4,
+    4,
+    "Full Stack Developer",
+    25000,
+    "ELSEWEDY ELECTRIC.",
+    "Open",
+    "As a Fullstack Developer, you'll be at the forefront of building dynamic web applications from start to finish. Your role involves both front-end and back-end development, crafting intuitive user interfaces and robust server-side logic.",
+    "Cairo, Egypt",
+    3,
+    "Hybrid",
+    "6 Weeks ago",
+    "../Images/ElSewedy.jpeg"
+  );
+  let job5 = new Job(
+    5,
+    5,
+    "Principal Software Engineer",
+    35000,
+    "Sumerge.",
+    "Open",
+    "As a Principal Software Engineer, you'll be a key leader in driving technical excellence and innovation within our organization. Your role involves providing strategic direction, architectural guidance, and mentorship to the development team.",
+    "Zayed, Egypt",
+    5,
+    "Remote",
+    "5 Weeks ago",
+    "../Images/smurge.jpeg"
+  );
+  
+  localStorage.setItem("job1", JSON.stringify(job1));
+  localStorage.setItem("job2", JSON.stringify(job2));
+  localStorage.setItem("job3", JSON.stringify(job3));
+  localStorage.setItem("job4", JSON.stringify(job4));
+  localStorage.setItem("job5", JSON.stringify(job5));
+  
+  const Jobs = [job1, job2, job3, job4, job5];
+  localStorage.setItem("AllJobs", JSON.stringify(Jobs));
+  function displayAllJobs() {
+    // document.getElementById("Jobs").innerHTML="";
+    Jobs.forEach((job) => {
+      job.displayJob();
+    });
+  }
+  displayAllJobs();
+  
 
-//sixth job
-let job6 = new job("Full Stack Developer","Sumerge",6,"Cairo Egypt","hybrid","2 weeks ago","40 000 EGP","3+","opened","As a Principal Software Engineer, you'll be a key leader in driving technical excellence and innovation within our organization.Your role involves providing strategic direction, architectural guidance, and mentorship to the development team.");
-localStorage.setItem("job6", JSON.stringify(job6));
-let parsedJob6 = JSON.parse(localStorage.getItem("job6"));
-var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
-var desiredValue = parsedJob4.jobStatus; // Specify the value you want to set
-// Loop through the radio buttons
-for (var i = 0; i < radioButtons.length; i++) {
-    // Check if the radio button's value matches the desired value
-    if (radioButtons[i].value === desiredValue) {
-        // Set the checked property of the matching radio button to true
-        radioButtons[i].checked = true;
-        break; // Exit the loop once the radio button is set
-    }
-}
-let title6 = parsedJob6.jobTitle;
-let company6 = parsedJob6.company;
-let ID6 = parsedJob6.jobID;
-let loc6 = parsedJob6.location;
-let workType6 = parsedJob6.workType;
-let created6 = parsedJob6.created;
-let salary6 = parsedJob6.salary;
-let years_of_experience6 = parsedJob6.yearsEXP;
-let description6 = parsedJob6.desc;
-document.getElementById("job-title6").innerHTML=title6;
-document.getElementById("company6").innerHTML=company6;
-document.getElementById("job-id6").innerHTML=ID6;
-document.getElementById("location6").innerHTML=loc6;
-document.getElementById("work-type6").innerHTML=workType6;
-document.getElementById("created6").innerHTML=created6;
-document.getElementById("salary6").innerHTML=salary6;
-document.getElementById("years-exp6").innerHTML=years_of_experience6;
-document.getElementById("desc6").innerHTML=description6;
-
-//delete job
 function deleteJob(jobid){
 
-    // Loop through each item in local storage
+    // Remove the job from localStorage
     for (var i = 0; i < localStorage.length; i++) {
-        // Get the key for each item
         var key = localStorage.key(i);
         if(key[key.length-1] == jobid){
             localStorage.removeItem(key);
-    }
-}
-    var elementToDelete = document.getElementById(jobid);
-    // Delete the element using the remove() method
-    elementToDelete.remove();
-}
-
-//edit job
-function editJob(jobid){
-    let editedData = JSON.parse(localStorage.getItem("EditFormData"));
-    let title = editedData.job_title;
-    let company = editedData.company_name;
-    let ID = editedData.job_id;
-    let loc = editedData.location;
-    let workType = editedData.WorkType;
-    let created = editedData.created;
-    let salary = editedData.salary;
-    let years_of_experience = editedData.yearsEXP;
-    let description = editedData.job_description;
-    let status = editedData.job_status;
-    // Loop through each item in local storage
-    for (var i = 0; i < localStorage.length; i++) {
-    // Get the key for each item
-    var key = localStorage.key(i);
-    if(key[key.length-1] == jobid){
-        // if(jobid==1){
-        //     document.getElementById("job-title").innerHTML=title;
-        //     document.getElementById("company").innerHTML=company;
-        //     document.getElementById("job-id").innerHTML=ID;
-        //     document.getElementById("location").innerHTML=loc;
-        //     document.getElementById("work-type").innerHTML=workType;
-        //     document.getElementById("created").innerHTML=created;
-        //     document.getElementById("salary").innerHTML=salary;
-        //     document.getElementById("years-exp").innerHTML=years_of_experience;
-        //     document.getElementById("desc").innerHTML=description;
-        //     var radioButtons = document.getElementsByName('input[name="jobstatus"]');
-        //     for (var i = 0; i < radioButtons.length; i++) {
-        //         if (radioButtons[i].value === status) {
-        //             radioButtons[i].checked = true;
-        //             break;
-        //         }
-        //     }
-        // }
-        // else if(jobid==2){
-        //     document.getElementById("job-title2").innerHTML=title;
-        //     document.getElementById("company2").innerHTML=company;
-        //     document.getElementById("job-id2").innerHTML=ID;
-        //     document.getElementById("location2").innerHTML=loc;
-        //     document.getElementById("work-type2").innerHTML=workType;
-        //     document.getElementById("created2").innerHTML=created;
-        //     document.getElementById("salary2").innerHTML=salary;
-        //     document.getElementById("years-exp2").innerHTML=years_of_experience;
-        //     document.getElementById("desc2").innerHTML=description;
-        //     var radioButtons = document.getElementsByName('input[name="jobstatus2"]');
-        //     for (var i = 0; i < radioButtons.length; i++) {
-        //         if (radioButtons[i].value === status) {
-        //             radioButtons[i].checked = true;
-        //             break;
-        //         }
-        //     }
-        // }
-        // else if(jobid==3){
-        //     document.getElementById("job-title3").innerHTML=title;
-        //     document.getElementById("company3").innerHTML=company;
-        //     document.getElementById("job-id3").innerHTML=ID;
-        //     document.getElementById("location3").innerHTML=loc;
-        //     document.getElementById("work-type3").innerHTML=workType;
-        //     document.getElementById("created3").innerHTML=created;
-        //     document.getElementById("salary3").innerHTML=salary;
-        //     document.getElementById("years-exp3").innerHTML=years_of_experience;
-        //     document.getElementById("desc3").innerHTML=description;
-        //     var radioButtons = document.getElementsByName('input[name="jobstatus3"]');
-        //     for (var i = 0; i < radioButtons.length; i++) {
-        //         if (radioButtons[i].value === status) {
-        //             radioButtons[i].checked = true;
-        //             break;
-        //         }
-        //     }
-        // }
-        // else if(jobid==4){
-        //     document.getElementById("job-title4").innerHTML=title;
-        //     document.getElementById("company4").innerHTML=company;
-        //     document.getElementById("job-id4").innerHTML=ID;
-        //     document.getElementById("location4").innerHTML=loc;
-        //     document.getElementById("work-type4").innerHTML=workType;
-        //     document.getElementById("created4").innerHTML=created;
-        //     document.getElementById("salary4").innerHTML=salary;
-        //     document.getElementById("years-exp4").innerHTML=years_of_experience;
-        //     document.getElementById("desc4").innerHTML=description;
-        //     var radioButtons = document.getElementsByName('input[name="jobstatus4"]');
-        //     for (var i = 0; i < radioButtons.length; i++) {
-        //         if (radioButtons[i].value === status) {
-        //             radioButtons[i].checked = true;
-        //             break;
-        //         }
-        //     }
-        // }
-        // else if(jobid==5){
-        //     document.getElementById("job-title5").innerHTML=title;
-        //     document.getElementById("company5").innerHTML=company;
-        //     document.getElementById("job-id5").innerHTML=ID;
-        //     document.getElementById("location5").innerHTML=loc;
-        //     document.getElementById("work-type5").innerHTML=workType;
-        //     document.getElementById("created5").innerHTML=created;
-        //     document.getElementById("salary5").innerHTML=salary;
-        //     document.getElementById("years-exp5").innerHTML=years_of_experience;
-        //     document.getElementById("desc5").innerHTML=description;
-        //     var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
-        //     for (var i = 0; i < radioButtons.length; i++) {
-        //         if (radioButtons[i].value === status) {
-        //             radioButtons[i].checked = true;
-        //             break;
-        //         }
-        //     }
-        // }
-         if(jobid==6){
-            document.getElementById("job-title6").innerHTML=title;
-            document.getElementById("company6").innerHTML=company;
-            document.getElementById("job-id6").innerHTML=ID;
-            document.getElementById("location6").innerHTML=loc;
-            document.getElementById("work-type6").innerHTML=workType;
-            document.getElementById("created6").innerHTML=created;
-            document.getElementById("salary6").innerHTML=salary;
-            document.getElementById("years-exp6").innerHTML=years_of_experience;
-            document.getElementById("desc6").innerHTML=description;
-            var radioButtons = document.getElementsByName('input[name="jobstatus5"]');
-            for (var i = 0; i < radioButtons.length; i++) {
-                if (radioButtons[i].value === status) {
-                    radioButtons[i].checked = true;
-                    break;
-                }
-            }
         }
     }
+
+    // Remove the job from the AllJobs array
+    let allJobsArray = JSON.parse(localStorage.getItem("AllJobs"));
+    for (var i = 0; i < allJobsArray.length; i++) {
+        if(allJobsArray[i].job_id == jobid){
+            allJobsArray.splice(i,1);
+        }
+    }
+    
+    // Update the AllJobs array in localStorage
+    localStorage.setItem("AllJobs", JSON.stringify(allJobsArray));
+
+    // Remove the job from the displayed jobs on the page if needed
+    // var elementToDelete = document.getElementById(jobid);
+    // elementToDelete.remove();
+    // var jobElement = document.getElementById(allJobsArray.find(job => job.job_id === jobid).div_id); // Find the job element by div_id
+    // if (jobElement) {
+    //     jobElement.remove();
+    // }
+var jobElement = document.getElementById(jobid);
+    if (jobElement) {
+        jobElement.remove();
+    }
 }
-} 
+
+function editJob(jobid){
+  
+}
