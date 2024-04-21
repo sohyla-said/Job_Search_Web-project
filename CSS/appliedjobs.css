@@ -1,14 +1,15 @@
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 #applied-jobs-container {
-  display: flex; /* Use flexbox */
-  flex-wrap: wrap; /* Allow items to wrap onto new lines */
+  display: flex;
+  flex-wrap: wrap; 
+
 }
 
-/* Styles for job container */
 .job-container {
   flex: 0 0 calc(33.33% - 20px);
   border: 2px solid #02457a;
@@ -62,13 +63,13 @@
 
 
 
-footer{
+/* footer{
 background-color: #c8c7c7;
 color: #02457A;
 padding:15px;
 padding-left: 30px;
 box-sizing: border-box;
-/* margin: 0; */
+margin: 0;
 padding: 0;
 width:100%;
 }
@@ -80,4 +81,19 @@ font-weight: bold;
 }
 footer .bold i{
 margin-right: 5px;
+} */
+footer{
+  background-color: #c8c7c7;
+  color: #02457A;
+  padding:15px;
+  padding-left: 30px;
+}
+footer .contact-option{
+  margin-right: 20px;
+}
+footer .bold{
+  font-weight: bold;
+}
+footer .bold i{
+  margin-right: 5px;
 }

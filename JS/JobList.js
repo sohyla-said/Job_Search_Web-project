@@ -26,7 +26,7 @@ class Job {
   }
 
   displayJob() {
-    let job= `<div class="job"> 
+    return `<div class="job"> 
     <img src="${this.imagePath}" alt="${this.company_name}" class="jobdisplayedimg">
         <div class="job-details">
         <h3>${this.job_title}</h3>
@@ -38,28 +38,13 @@ class Job {
         Full Time
         <img src="../Images/pound.jpg" class="pound">
         ${this.salary}</span>
-        <button class="job-btn"><a href="JobDetails.html">Details</a></button>
+        <button class="job-btn"><a href="JobDetails.html?id=${this.job_id}">Details</a></button>
         </div>
           </div>`;
-          document.getElementById("job-container").innerHTML += job;
 
   }
 }
-{/* <div class="job">
-            <img src="../Images/Metachain.webp" alt="company logo">
-            <div class="job-details">
-                <h3>DevOps Engineer</h3>
-                <h5> Metachain Technologies inc. </h5>
-                <span class="span">
-                    <img src="../Images/location.jpg" class="location">
-                    Cairo,Egypt
-                    <img src="../Images/time.jpg" class="time">
-                    Full Time
-                    <img src="../Images/pound.jpg" class="pound">
-                    EGP25000</span>
-                <button class="job-btn"><a href="devopseng.html">Details</a></button>
-            </div>
-        </div> */}
+
 
 let Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
 
@@ -177,7 +162,7 @@ function displayAllJobs() {
     jobsHtml += job.displayJob();
   });
 
-  document.getElementById("Jobs").innerHTML = jobsHtml;
+  document.getElementById("job-container").innerHTML = jobsHtml;
 }
 
 displayAllJobs(); 

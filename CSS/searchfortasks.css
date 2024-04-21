@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.input_{
+  height: 100%;
+}
 form input {
     padding: 5px;
     /* padding and spacing */
@@ -45,6 +48,7 @@ form input[type="submit"]:hover {
 }
 body {
     background-color: #ebebeb;
+    height: 70vh;
 }
 label {
     display: inline-block;  
@@ -59,7 +63,21 @@ label {
     font-size: 0.8rem;
     margin-top: 5px;
   }
-
+  footer{
+    background-color: #c8c7c7;
+    color: #02457A;
+    padding:15px;
+    padding-left: 30px;
+}
+footer .contact-option{
+    margin-right: 20px;
+}
+footer .bold{
+    font-weight: bold;
+}
+footer .bold i{
+    margin-right: 5px;
+}
 /* Media Query for responsiveness */
     @media screen and (max-width: 800px) {
       form {

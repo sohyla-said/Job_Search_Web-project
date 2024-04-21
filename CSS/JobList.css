@@ -95,7 +95,9 @@ margin-right: 5px;
     text-decoration: none;
 }
 
-
+.job-btn a:visited{
+    color: #02457A;
+}
 .job-btn:hover{
     background-color: #02457A; 
     

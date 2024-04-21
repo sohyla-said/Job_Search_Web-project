@@ -91,6 +91,13 @@
   color: #018abe;
 }
 
+.apply-button a{
+  text-decoration: none;
+  color: #02457A;
+}
+.apply-button a:hover{
+  color: #d6e8ee;
+}
 
 
 footer{
