@@ -26,23 +26,40 @@ class Job {
   }
 
   displayJob() {
-    return `<div class="job-container"> 
-        <div class="jobdetails">
-            <p>Job Details:</p>
-             <ul>
-                <li>ID: ${this.job_id}</li>
-                <li>Title: ${this.job_title}</li>
-                <li>Company: ${this.company_name}</li>
-                <li>Status: ${this.job_status}</li>
-                <li>Description: ${this.job_description}</li>
-                <li>Location: ${this.location}</li>
-            </ul>
+    let job= `<div class="job"> 
+    <img src="${this.imagePath}" alt="${this.company_name}" class="jobdisplayedimg">
+        <div class="job-details">
+        <h3>${this.job_title}</h3>
+        <h5>${this.company_name}</h5>
+        <span class="span">
+        <img src="../Images/location.jpg" class="location">
+        ${this.location}
+        <img src="../Images/time.jpg" class="time">
+        Full Time
+        <img src="../Images/pound.jpg" class="pound">
+        ${this.salary}</span>
+        <button class="job-btn"><a href="JobDetails.html">Details</a></button>
         </div>
-        <div class="jobimg">Click to view its details: <br><a href="JobDetails.html?id=${this.job_id}">View Details</a></div>
-           </div>
           </div>`;
+          document.getElementById("job-container").innerHTML += job;
+
   }
 }
+{/* <div class="job">
+            <img src="../Images/Metachain.webp" alt="company logo">
+            <div class="job-details">
+                <h3>DevOps Engineer</h3>
+                <h5> Metachain Technologies inc. </h5>
+                <span class="span">
+                    <img src="../Images/location.jpg" class="location">
+                    Cairo,Egypt
+                    <img src="../Images/time.jpg" class="time">
+                    Full Time
+                    <img src="../Images/pound.jpg" class="pound">
+                    EGP25000</span>
+                <button class="job-btn"><a href="devopseng.html">Details</a></button>
+            </div>
+        </div> */}
 
 let Jobs = JSON.parse(localStorage.getItem("AllJobs")) || [];
 
@@ -62,7 +79,7 @@ let job1 = new Job(
   3,
   "On-site",
   "2 Weeks ago",
-  "../Images/Metachain.webp"
+  "../Images/Metachain.jpeg"
 );
 let job2 = new Job(
   2,
@@ -75,7 +92,7 @@ let job2 = new Job(
   5,
   "Hybrid",
   "2 Weeks ago",
-  "../Images/IBM.jpeg"
+  "../Images/IBM2.png"
 );
 let job3 = new Job(
   3,
@@ -124,7 +141,7 @@ if (Jobs.length === 0) {
   addJobToLocalStorage(job5);
 }
 function displayAllJobs() {
-  document.getElementById("Jobs").innerHTML = "";
+  // document.getElementById("Jobs").innerHTML = "";
   let jobsHtml = "";
   Jobs.forEach((jobData) => {
     let job = new Job(
