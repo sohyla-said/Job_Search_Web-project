@@ -245,8 +245,8 @@ const signupForm = document.querySelector(
 );
 signupForm.addEventListener("submit", submitForm);
 
-function submiForm(eve) {
-  eve.preventDefault();
+function submiForm(event) {
+  event.preventDefault();
   var isuser = document.getElementById("is_User").checked;
   var iscompanyAdmin = document.getElementById("is_Company_admin").checked;
   if (!isuser && !iscompanyAdmin) {
