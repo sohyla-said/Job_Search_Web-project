@@ -232,10 +232,11 @@ function submitForm(event) {
 
   if (isCompanyAdmin) {
     alert("Company Admin account created successfully!");
+    document.location.href = "CreatedJobs.html";
   } else {
     alert("User account created successfully!");
+    document.location.href = "JobList.html";
   }
-  document.location.href = "Home.html";
 
   signupForm.reset();
 }
@@ -274,7 +275,7 @@ function submiForm(eve) {
     if (isCompanyAdmin) {
       document.location.href = "createdJobs.html";
     } else {
-      document.location.href = "availablejobs.html";
+      document.location.href = "JobList.html";
     }
   }
   signInForm.reset();
