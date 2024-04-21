@@ -17,7 +17,7 @@ class Job {
     displayJob() {
         let job = `<div class="job-container"> 
         <div class="jobimg"><a href="JobDetails.html?id=${this.job_id}">
-           <img src="../Images/${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg"></a>
+           <img src="${this.imagePath}" alt="${this.job_id}" class="jobdisplayedimg"></a>
          </div>
         <div class="jobdetails">
              <p class="displayed-job-name">${this.job_title}</p>
