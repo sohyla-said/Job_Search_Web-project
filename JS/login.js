@@ -215,17 +215,17 @@ function submitForm(event) {
   isCompanyAdmin = document.getElementById("is_company_admin").checked;
 
   // Check if username already exists in localStorage
-  if (getUserByUsername(username)) {
-    alert(
-      "An account with this username already exists. Please Login instead."
-    );
-    return;
-  }
+  // if (getUserByUsername(username)) {
+  //   alert(
+  //     "An account with this username already exists. Please Login instead."
+  //   );
+  //   return;
+  // }
 
-  var newUser = new User(username, email, password, isCompanyAdmin);
-  currentUser = newUser;
-  localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  localStorage.setItem(username, JSON.stringify(newUser));
+  // var newUser = new User(username, email, password, isCompanyAdmin);
+  // currentUser = newUser;
+  // localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  // localStorage.setItem(username, JSON.stringify(newUser));
 
   if (isCompanyAdmin) {
     alert("Company Admin account created successfully!");
@@ -266,30 +266,31 @@ else if (!password) {
     return;
   }
   // Search for the username in the local storage to confirm user identity
-  var userData = getUserByUsername(username);
+  //  var userData = getUserByUsername(username);
   var isCompanyAdmin = document.getElementById("is_Company_admin").checked;
-  if (!username || !password || !userData || userData.password !== password) {
-    alert("Invalid username or password."); // Inform user of invalid credentials
-  } else if (userData && userData.password === password) {
-    currentUser = userData;
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+  // if (!username || !password || !userData || userData.password !== password) {
+  //   alert("Invalid username or password."); // Inform user of invalid credentials
+  // } else if (userData && userData.password === password) 
+  //   {
+    // currentUser = userData;
+    // localStorage.setItem("currentUser", JSON.stringify(currentUser));
     if (iscompanyAdmin) {
       document.location.href = "createdJobs.html";
     } else {
       document.location.href = "JobList.html";
     }
-  }
+  // }
   signInForm.reset();
 }
 const signInForm = document.querySelector(".form-container.sign-in-container form");
 signInForm.addEventListener("submit", submiForm);
 
-function getUserByUsername(username) {
-  var userUsername = localStorage.getItem(username);
-  // if there is a key with this username we parse it so the data is not stored as string anymore but as a user object again.
-  if (userUsername !== null && userUsername !== "") {
-    return JSON.parse(userUsername);
-  } else {
-    return null;
-  }
-}
+// function getUserByUsername(username) {
+//   var userUsername = localStorage.getItem(username);
+//   // if there is a key with this username we parse it so the data is not stored as string anymore but as a user object again.
+//   if (userUsername !== null && userUsername !== "") {
+//     return JSON.parse(userUsername);
+//   } else {
+//     return null;
+//   }
+// }

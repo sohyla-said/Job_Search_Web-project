@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
               WorkType: document.getElementById("WorkType").value
           };
 
-          localStorage.setItem('EditFormData', JSON.stringify(EditFormData));
+          //localStorage.setItem('EditFormData', JSON.stringify(EditFormData));
           window.location.href = 'CreatedJobs.html';
       }
   });

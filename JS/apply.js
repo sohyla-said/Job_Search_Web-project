@@ -156,17 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
       // Get existing appliedformData array from localStorage or create an empty array
-      var appliedFormDataArray =
+      //var appliedFormDataArray =
         JSON.parse(localStorage.getItem("appliedFormDataArray")) || [];
 
       // Add the current form data to the array
-      appliedFormDataArray.push(applyformData);
+      //appliedFormDataArray.push(applyformData);
 
       // Store the updated array back to localStorage
-      localStorage.setItem(
-        "appliedFormDataArray",
-        JSON.stringify(appliedFormDataArray)
-      );
+      // localStorage.setItem(
+      //   "appliedFormDataArray",
+      //   JSON.stringify(appliedFormDataArray)
+      // );
 
       window.location.href = "appliedjobs.html";
     }
