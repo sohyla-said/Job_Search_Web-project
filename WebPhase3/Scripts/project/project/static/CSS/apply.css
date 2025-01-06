@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ebebeb;
+}
+form input,
+form textarea,
+form select {
+  padding: 5px;
+  /* padding and spacing */
+  border: 2px solid #ccc;
+  /* thin border */
+  border-radius: 10px;
+  /* rounded corners */
+  font-size: 16px;
+  margin-bottom: 15px;
+  /* space between inputs */
+  width: auto;
+  outline: none;
+  background-color: #d6e8ee;
+  align-items: center;
+ 
+}
+
+form input:focus,
+input:hover,
+textarea:focus,
+textarea:hover,
+select:focus,
+select:hover {
+  border-color: #001b48;
+}
+
+form {
+  width: 600px;
+  border: 2.5px solid #001b48;
+  height: auto;
+  padding: 0 15px;
+  border-radius: 18px;
+  color: #001b48;
+  background-color: white;
+  margin: 100px auto 5px;
+  text-align: center;
+}
+form input[type="radio"] {
+  margin-left: 40px;
+}
+form select,
+form option {
+  margin-right: 90px;
+}
+form input[type="submit"],
+form input[type="reset"] {
+  width: 100px;
+  background-color: #d6e8ee;
+  border-radius: 20px;
+  color: #001b48;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+  background-color: #02457a;
+  color: white;
+
+}
+body {
+  background-color: #ebebeb;
+}
+
+form label {
+  display: block;
+  width: 100%;
+  text-align: center; 
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+
+
+
+
+/* label {
+  display: block;
+  width: 150px;
+  text-align: center;
+  margin-right: 40px;
+  margin-bottom: 5px;
+  font-size: 20px;
+} */
+label.error-message {
+  display: none; /* Initially hide error messages  */
+  color: red;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.error-message.active {
+  display: block; /* Show error messages on validation failure */
+}
+
+#id_jobID {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px; 
+}
+
+
+h1 {
+  margin-top: 40px; 
+  margin-bottom: 40px; 
+}
+
+form textarea.full-height-textarea {
+  height: 150px; /* Set the height to match the other boxes */
+}
+
+footer{
+  background-color: #c8c7c7;
+  color: #02457A;
+  padding:15px;
+  padding-left: 30px;
+  margin-top: 100px;
+}
+footer .contact-option{
+  margin-right: 20px;
+}
+footer .bold{
+  font-weight: bold;
+}
+footer .bold i{
+  margin-right: 5px;
+}

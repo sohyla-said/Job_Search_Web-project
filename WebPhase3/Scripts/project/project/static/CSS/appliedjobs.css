@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#job-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Application {
+  flex: 0 0 calc(33.33% - 20px);
+  border: 2px solid #02457a;
+  border-radius: 18px;
+  color: #02457a;
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.Application:hover {
+  background-color: #02457a;
+  color: #d6e8ee;
+  transition: 0.3s;
+  transform: scale(1.09);
+}
+
+.application-details {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.application-details h3 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.application-details ul {
+  list-style-type: none;
+  font-style: bold;
+  font-weight: 300;
+  font-size: 35px;
+  padding: 0;
+}
+
+.application-details ul li {
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 900;
+  font-style: bold;
+}
+
+.application-details li span {
+  font-weight: normal;
+}
+
+footer {
+  background-color: #c8c7c7;
+  color: #02457A;
+  padding: 15px;
+  padding-left: 30px;
+}
+
+footer .contact-option {
+  margin-right: 20px;
+}
+
+footer .bold {
+  font-weight: bold;
+}
+
+footer .bold i {
+  margin-right: 5px;
+}

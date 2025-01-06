@@ -1,0 +1,80 @@
+{% extends 'userbase.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/searchfortasks.css' %}">
+  {% load static %}
+  <link rel="icon" href="{% static 'Images/logo2.png' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Job Search</title>
+  <!-- <script src="{% static 'JS/searchfortasks.js' %}"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('#searchForm').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'GET',
+                url: "{% url 'searchfortasks' %}",
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    $('#searchResults').empty();
+                    if (response.jobs.length > 0) {
+                        $.each(response.jobs, function(index, job) {
+                            $('#searchResults').append(
+                                `<li>
+                                    <strong>Title:</strong> ${job.title}<br>
+                                    <strong>Years of Experience:</strong> ${job.YearsOfExperience}<br>
+                                    <strong>Salary:</strong> ${job.salary}<br>
+                                    <strong>Company Name:</strong> ${job.CompanyName}<br>
+                                    <strong>Location:</strong> ${job.Location}<br>
+                                    <strong>Description:</strong> ${job.description}<br>
+                                    <strong>Work Type:</strong> ${job.WorkType}<br>
+                                    <strong>Job Status:</strong> ${job.JobStatus ? 'Active' : 'Inactive'}<br>
+                                    <strong>Created At:</strong> ${job.created_at}<br>
+                                    <img src="${job.image_url}" alt="${job.CompanyName}"><br>
+
+                                </li>`
+                            );
+                            if (index < response.jobs.length - 1) {
+                                $('#searchResults').append('<hr class="job-separator">');
+                            }
+                        });
+                    } else {
+                        $('#searchResults').append('<li>No jobs found.</li>');
+                    }
+                }
+            });
+        });
+    });
+</script>
+</head>
+<body>
+  
+  <form id="searchForm" method="get" action="{% url 'searchfortasks' %}">
+    <br><h2>Job Search</h2><br>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <br><button type="submit">Search</button><br><br>
+      
+  </form>
+
+  <div id="searchResultsContainer">
+    <br><h2>Search Results</h2><br>
+    <ul id="searchResults"></ul>
+  </div>
+</body>
+</html>
+{% endblock content %}

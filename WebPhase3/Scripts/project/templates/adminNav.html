@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <nav id="navbar">
+        {% load static %}
+        <img src="{% static 'Images/logo2.png' %}" alt="Website's Logo" class="navimg">
+        <ul>
+            <li><a href="{% url 'home' %}" class="navlink"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="{% url 'created_jobs' %}" class="navlink">Created Jobs</a></li>
+            <li><a href="{% url 'add_new_jobs' %}" class="navlink">Add Job</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
+
+{% block content %}
+{% endblock content %}

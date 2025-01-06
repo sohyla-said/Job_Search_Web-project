@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.userinput {
+
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 100px; 
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #001B48;
+  line-height: 15px;
+  padding: 30px;
+  
+  }
+.userinput h1{
+  margin-bottom: 20px;
+}
+.userinput input,
+.userinput textarea {
+
+padding: 5px;
+border: 2px solid #ccc;
+border-radius: 10px;
+font-size: 16px;
+margin-bottom: 3px;
+width: 100%;
+max-width: 400px;
+color: #001B48;
+max-width: fit-content;
+background-color: #D6E8EE;
+
+
+}
+
+
+
+.userinput form input:hover,
+.userinput form textarea:hover {
+border-color: #001B48;
+
+}
+
+.userinput form input[type="submit"] {
+width: 100%;
+max-width: 100px;
+padding: 5px;
+background-color: #D6E8EE;
+color: #001B48;
+align-self: center;
+align-content: center;
+}
+
+.userinput form .submit-button:hover {
+background-color: #02457A;
+color: white;
+}
+.userinput .error-message{
+color:red;
+font-size: 14px;
+margin-top: 5px;
+
+}
+
+/* Body */
+body {
+background-color: #ebebeb;
+color: #001B48;
+margin-top: 10px;
+}
+
+h1 {
+color: #001B48;
+align-self: center;
+align-content: center;
+
+}
+
+.userinput label {
+color: #001B48; 
+font-size: 18px;
+width: 100%;
+max-width: 400px;
+}
+
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 800px) {
+  .userinput {
+      margin-left: 10px; /* Adjust margin for smaller screens */
+      margin-right: 10px; /* Adjust margin for smaller screens */
+  }
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 400px) {
+  .userinput {
+      margin-left: 5px; /* Adjust margin for smaller screens */
+      margin-right: 5px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .userinput {
+      margin: 100px auto; /* Center the form horizontally when the screen width is at least 1200px */
+  }
+}
+
+
+footer{
+  background-color: #c8c7c7;
+  color: #02457A;
+  padding:15px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+footer .contact-option{
+  margin-right: 20px;
+}
+footer .bold{
+  font-weight: bold;
+}
+footer .bold i{
+  margin-right: 5px;
+}

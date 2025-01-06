@@ -1,0 +1,16 @@
+footer{
+    margin-top: 20px;
+    background-color: #c8c7c7;
+    color: #02457A;
+    padding:15px;
+    padding-left: 30px;
+}
+footer .contact-option{
+    margin-right: 20px;
+}
+footer .bold{
+    font-weight: bold;
+}
+footer .bold i{
+    margin-right: 5px;
+}

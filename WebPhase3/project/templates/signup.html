@@ -1,0 +1,124 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
+<link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="icon" href="../Images/logo2.png">
+  <!-- <script type="text/javascript" src="../JS/user.js"></script> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <img src="{% static 'Images/logo2.png' %}" alt="Website's Logo" class="navimg">
+    <ul>
+      <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      <li> <a href="{% url 'login' %}">Login</a></li>
+    </ul>
+  </nav>
+
+  <h1>Hello, Friend!</h1>
+  <p>Enter your personal details and start journey with us</p>  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+    <form method="post" id="signup-form">
+    {% csrf_token %}
+    <h1>Create account</h1>
+
+         
+        <div class="user-box">
+          <span class="material-icons">person</span>
+
+          <input type="text" maxlength="40" name="username" id="username" required=""> 
+          <label>Username</label> 
+        </div> 
+            <div class="user-box">
+              <span class="material-icons">lock</span>
+    
+              <input type="password" id="password" name="password" required />
+              <label>Password</label> 
+            </div>
+            <div class="user-box">
+              <span class="material-icons">visibility_off</span>
+    
+            <input type="password" id="confirm-password" name="confirm-password" required  />
+              <label>Confirm Password</label> 
+            </div>
+            <div class="user-box">
+              <span class="material-icons">mail</span>
+    
+              <input type="email" maxlength="30" name="email" id="email" required="">
+              <label>Email</label>
+            </div>
+            <div class="checkbox-inline">
+              <input type="checkbox" id="is_user" name="is_user"  >
+              <label for="is_user">User</label>
+            </div>
+            <div class="checkbox-inline">
+              <input type="checkbox" id="is_company_admin" name="is_company_admin" 
+                onclick="toggleCompanyField(this)">
+              <label for="is_company_admin">Company Admin</label>
+            </div>
+            <div class="user-box" id="company_name_field">
+              <span class="material-icons">business_center</span>
+              <input type="company_name" name="company_name" id="company_name" disabled required="">
+              <label>Company Name</label>
+            </div>
+            <div  class="error">
+            {% if messages %}
+            <ul class="message">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+      </div>
+            <div class="butto">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <input type="submit" class="submit" value="Signup">
+            </div>
+    
+          </form>
+        </div>
+    
+    
+
+
+    
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signUp">Sign In</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="{% static 'JS/signup.js' %}"></script>
+  <script type="text/javascript">
+    document.getElementById('signUp').addEventListener('click', function() {
+        window.location.href = "{% url 'login' %}";
+    });
+</script>
+</body>
+
+</html>

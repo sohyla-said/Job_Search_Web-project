@@ -1,0 +1,102 @@
+{% extends 'userbase.html' %}
+{% block content %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Jobs</title>
+    <link rel="icon" href="../Images/logo2.png">
+    <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/JobList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav id="navbar">
+        <img src="../Images/logo2.png" alt="Website's Logo" class="navimg">
+        <ul>
+          <li><a href="Home.html"><i class="fa-solid fa-house"></i>Home</a></li>
+          <li><a href="searchfortasks.html">Job Search</a></li>
+          <li><a href="JobList.html">Available Jobs</a></li>
+          <li><a href="appliedjobs.html">Applied Jobs</a></li>
+        </ul>
+      </nav>
+    <div class="avaliable-jobs" id="job-container"></div>
+    <script src="../JS/JobList.js"></script>
+    <footer>
+        <p class="bold">Contact Us</p>
+        <span class="contact-option"><span class="bold"><i class="fa-solid fa-envelope"></i>Email: </span>aabbcc@gmail.com</span>
+        <span class="contact-option"><span class="bold"><i class="fa-solid fa-phone"></i>Phone: </span>011223344556</span>
+        <span class="contact-option"><span class="bold"><i class="fa-solid fa-map-location"></i>Address: </span>Egypt</span>
+      </footer>
+</body>
+
+</html> -->
+
+<!-- jobs_list.html -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job List</title>
+</head>
+
+<body>
+  <h1>Job List</h1>
+  <ul>
+    {% for job in jobs %}
+    <li><a href="{% url 'job_detail' job.ID %}">{{ job.title }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     {% load static %}
+    <link rel="icon" href="{% static 'Images/logo2.png'%}">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/JobList.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+  <title>Job List</title>
+</head>
+<body>
+  <div class="avaliable-jobs" id="jobs-container">
+    {% for job in jobs %}
+    <div class="job">
+      {% load static %}
+        <img src="{{ job.image.url }}" alt="{{job.CompanyName}}">
+        <div class="job-details" >
+            <h3>{{ job.title }}</h3>
+            <h5> {{ job.CompanyName }} </h5>
+            <span class="span" >
+                <img src="{% static 'Images/location.jpg' %}" class="location">
+                Cairo,Egypt  
+                <img src="{% static 'Images/time.jpg' %}" class="time" >
+                Full Time
+                <img src="{% static 'Images/pound.jpg' %}"class="pound"> 
+                EGP25000</span>
+            <button class="job-btn"><a href="{% url 'job_detail' job.ID %}">Details</a></button>
+        </div>
+        {% endfor %}
+        </div>
+  
+</body>
+</html>
+{% endblock content %}

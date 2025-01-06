@@ -1,0 +1,361 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ebebeb;
+}
+/* nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #02457A;
+    width: 100%;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin-right:50px;
+    gap: 40px;
+}
+nav img{ 
+ width: 120px;
+ height: 80px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+ margin-left: 50px;
+}
+nav a{
+    display:inline-block ;
+    position: relative;
+    text-decoration: none;
+    color: #D6E8EE;
+    font-weight: 800;
+    font-size: 20px;
+}
+nav a:before, nav a:after{
+content:"";
+position: absolute;
+background-color:#D6E8EE;
+height:2px;
+width: 0;
+transition:0.5s;
+}
+nav a:after{
+left:0;
+bottom: -5px;
+
+}
+nav a:before{
+right: 0;
+top:-5px;
+}
+nav a:hover:after,
+nav a:hover:before{
+  width: 100%;
+} 
+nav a:hover{
+  color: #97CADB;
+} */
+.intro-section{
+    display: flex; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #dddddd;
+}
+.intro{
+    color: #02457A;
+    width: 600px; 
+    margin-left: 20px;
+}
+.intro-title{
+    font-size: 50px; 
+    border-bottom: 2px solid #02457A;
+    margin-bottom: 20px;
+}
+.intro-desc{
+    padding-top: 0;
+    font-size: 18px;
+}
+.Career_Catalyst{
+    font-weight: bold;
+    font-size: 22px;
+    text-shadow: 0 0 5px #02457A,
+              0 0 25px #02457A,
+              0 0 50px #02457A,
+              0 0 50px #02457A;
+}
+/* .intro-desc span:hover{
+    background-color: #02457A;
+    color: #d6e8ee;
+    border-radius: 10px;
+    padding: 5px;
+} */
+.avatars-img{
+    width: 150px;
+    height: fit-content;
+}
+
+.intro-img{
+    transform:
+    perspective(800px)
+    rotateY(-12deg);
+  transition: transform 1s ease 0s;
+  border-radius: 4px;
+  box-shadow:
+    /* rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px; */
+    0 0 5px #02457A,
+              0 0 25px #5a758c,
+              0 0 25px #5a758c,
+              0 0 25px #5a758c;
+}
+  
+.jobs-section{
+    text-align: center;
+}
+.featured-jobs{
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    color: #02457A;
+    position: relative;
+    margin-top: 30px;
+    width: fit-content;
+    font-size: 30px;
+}
+.featured-jobs:before, .featured-jobs:after{
+    content:"";
+    position: absolute;
+    background-color:#02457A;
+    height:2px;
+    width: 0;
+    transition:0.5s;
+    }
+.featured-jobs:after{
+    left:0;
+    bottom: -5px;
+}
+.featured-jobs:before{
+    right: 0;
+    top:-5px;
+}
+.featured-jobs:hover:after,
+.featured-jobs:hover:before{
+      width: 100%;
+} 
+.featured-jobs:hover{
+      cursor: pointer;
+}
+.browse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 40px 0 50px 0;
+    color: #02457A;
+}
+.job{
+    border: 2px solid #02457A;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;
+    height: auto;
+    background-color: #D6E8EE;
+    text-align: center;
+}
+.job h4{
+    font-size: 25px;
+    text-decoration: underline;
+    margin:10px 0;
+}
+.job i{
+    font-size: 25px;
+}
+.job p{
+    font-size: 18px;
+}
+.job:hover{
+    background-color: #02457a;
+    color:#d6e8ee;
+    transition:0.3s;
+    transform: scale(1.09);
+}
+.desc{
+    background-color: #dddddd;
+    text-align: center;
+    padding: 30px;
+}
+.desc .title{
+    color: #02457A;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+.desc .title i{
+    margin-right: 50px;
+}
+.desc .break-line{
+    background-color: #02457A;
+    height: 2px;
+    width: 60%;
+    display: block;
+    margin: auto;
+}
+.desc .desc_1{
+    color: #02457A;
+    font-size: 28px;
+    margin-top: 30px;
+}
+.desc .desc_2{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #02457A;
+}
+.desc-btn{
+    display: block;
+    background-color:#D6E8EE;
+    padding: 10px 0;
+    font-size: 22px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    border:2px solid #02457A;
+    border-radius: 20px;
+    width: 200px;
+}
+.desc-btn a{
+    text-decoration: none;
+}
+.desc-btn a:visited{
+    color: #02457A;
+}
+.desc-btn a i{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.desc-btn:hover{
+    transition:0.3s;
+    transform: scale(1.2);
+}
+.trust-title{
+    color: #02457A;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+.companies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+    margin: 40px 0 20px 0;
+    color: #02457A;
+}
+.company{
+    border: 2px solid #02457A;
+    width: 300px;
+    padding: 10px; 
+    border-radius: 10px;
+    height: auto;
+    background-color: #D6E8EE;
+    text-align: center;
+}
+.company h4{
+    font-size: 25px;
+    text-decoration: underline;
+    margin:10px 0;
+}
+.company a{
+    text-decoration: none;
+    color: #02457A;
+}
+.company a:hover{
+    color: #97CADB;
+}
+.company i{
+    font-size: 25px;
+}
+.company p{
+    font-size: 18px;
+}
+/* .company:hover{
+    transition:0.3s;
+    transform: scale(1.09);
+} */
+footer{
+    background-color: #c8c7c7;
+    color: #02457A;
+    padding:15px;
+    padding-left: 30px;
+}
+footer .contact-option{
+    margin-right: 20px;
+}
+footer .bold{
+    font-weight: bold;
+}
+footer .bold i{
+    margin-right: 5px;
+}
+@media(max-width:768px){
+    .intro-title{
+        font-size: 35px;
+    }
+    .intro-desc{
+        font-size: 16px;
+    }
+    .Career_Catalyst{
+        font-size: 20px;
+    }
+    .avatars-img{
+        width: 110px;
+    }
+    .intro-btn{
+        padding: 10px 0;
+        font-size: 18px;
+        margin: 15px auto;
+        width: 140px;
+    }
+    .intro-img{
+        width: 380px;
+        margin-top: 20px;
+    }
+    .featured-jobs{
+        font-size: 25px;
+    }
+    .browse{
+        row-gap: 30px;
+    }
+    .job{
+        width: 250px;
+    }
+    .desc .title{
+        font-size: 32px;
+    }
+    .desc .title i{
+        margin-right: 35px;
+    }
+    .desc-btn{
+        font-size: 20px;
+        width: 180px;
+    }
+    .trust-title{
+        font-size: 25px;
+    }
+    .companies{
+        row-gap: 30px;
+    }
+    .company{
+        width: 250px;
+    }
+}

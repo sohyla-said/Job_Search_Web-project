@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job</title>
+    {% load static%}
+    <link rel="icon" href="{% static 'Images/logo2.png' %}">
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/EditJob.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    </style>
+</head>
+<nav id="navbar">
+    <img src="{% static 'Images/logo2.png' %}" alt="Website's Logo" class="navimg">
+    <ul>
+        <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="{% url 'created_jobs' %}">Created Jobs</a></li>
+        <li><a href="{% url 'add_new_jobs' %}">Add Job</a></li>
+    </ul>
+</nav>
+
+
+<body>
+    <form action="" onsubmit="return validateForm()" id="my-form" method="post">
+        {% csrf_token %}
+        <h1>Edit Job Details</h1><br>
+        <label for="job_id">Job ID:</label><br>
+        <select id="job_id" name="job_id">
+            <option value="">Select Job ID</option>
+        </select> <span class="error-message"></span>
+        <br><br>
+        <label for="job_title">Job Title:</label><br>
+        <input type="text" id="job_title" name="job_title">
+        <span class="error-message"></span>
+        <br><br>
+        <label for="salary">Salary:</label><br>
+        <input type="text" id="salary" name="salary">
+        <span class="error-message"></span>
+        <br><br>
+        <label for="company_name">Company Name:</label><br>
+        <input type="text" id="company_name" name="company_name">
+        <span class="error-message"></span>
+        <br><br>
+        <label>Job Status:</label><br>
+        <div>
+            <input type="radio" id="job_status_opened" name="job_status" value="opened" checked>
+            <label for="job_status_opened">Opened</label>
+            <span class="error-message"></span><br>
+
+            <input type="radio" id="job_status_closed" name="job_status" value="closed">
+            <label for="job_status_closed">Closed</label>
+            <span class="error-message"></span>
+        </div>
+
+        <br>
+        <label for="created">Created:</label><br>
+        <input type="text" id="created" name="created">
+        <span class="error-message"></span>
+        <br><br>
+        <span class="error-message"></span>
+        <label for="years_of_experience">Years of Experience:</label><br>
+        <input type="text" id="years_of_experience" name="years_of_experience">
+        <br><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location">
+        <span class="error-message"></span>
+        <br><br>
+        <label for="job_description">Job Description:</label><br>
+        <textarea name="job_description" id="job_description" placeholder="Job Description" cols="40"
+            rows="10"></textarea>
+        <span class="error-message"></span>
+        <br><br>
+        <label for="WorkType">Work Type:</label><br>
+        <input type="text" id="WorkType" name="WorkType">
+        <br><br>
+        <input type="submit" value="Edit" id="submit-button">
+        <span class="error-message"></span>
+        <input type="reset" value="Reset">
+        <span class="error-message"></span>
+
+    </form>
+    <script type="text/javascript" src="{% static 'JS/EditJob.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch available Job IDs and populate dropdown
+            fetch('/get_available_job_ids/')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const jobDropdown = document.getElementById('job_id');
+                    data.forEach(id => {
+                        const option = document.createElement('option');
+                        option.value = id;
+                        option.textContent = id;
+                        jobDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching available job IDs:', error);
+                });
+
+            // Event listener for job_id dropdown change
+            document.getElementById('job_id').addEventListener('change', function () {
+                var job_id = this.value;
+                if (job_id) {
+                    fetch('/get_job_details/?job_id=' + job_id)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Populate other form fields with fetched data
+                            document.getElementById('job_title').value = data.title;
+                            document.getElementById('salary').value = data.salary;
+                            document.getElementById('company_name').value = data.CompanyName;
+                            if (data.JobStatus === true) {
+                                document.getElementById('job_status_opened').checked = true;
+                            } else {
+                                document.getElementById('job_status_closed').checked = true;
+                            }
+                            document.getElementById('years_of_experience').value = data.YearsOfExperience;
+                            document.getElementById('location').value = data.Location;
+                            document.getElementById('job_description').value = data.description;
+                            document.getElementById('WorkType').value = data.WorkType;
+                            document.getElementById('created').value = data.created_at;
+
+                        })
+                        .catch(error => {
+                            console.error('Error fetching job details:', error);
+                        });
+                } else {
+                    // Clear other form fields if no Job ID selected
+                    document.getElementById('job_title').value = '';
+                    document.getElementById('salary').value = '';
+                    document.getElementById('company_name').value = '';
+                    document.getElementById('job_status_opened').checked = false;
+                    document.getElementById('job_status_closed').checked = false;
+                    document.getElementById('years_of_experience').value = '';
+                    document.getElementById('location').value = '';
+                    document.getElementById('job_description').value = '';
+                    document.getElementById('WorkType').value = '';
+
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

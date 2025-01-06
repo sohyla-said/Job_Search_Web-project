@@ -1,0 +1,165 @@
+{% extends 'adminNav.html' %}
+{% block content %}
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Created jobs</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'Images/logo2.png'%}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/CreatedJobs.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav id="navbar">
+        {% load static %}
+        <img src="{% static 'Images/logo2.png' %}" alt="Website's Logo" class="navimg">
+        <ul>
+            <li><a href="{% url 'home' %}" class="navlink"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="{% url 'created_jobs' %}" class="navlink">Created Jobs</a></li>
+            <li><a href="{% url 'add_new_jobs' %}" class="navlink">Add Job</a></li>
+        </ul>
+    </nav>
+    <div id="created-jobs">
+    </div>
+    <button class="up-btn"><a href="#navbar">Go Up</a><i class="fa-solid fa-arrow-up"></i></button>
+    {% load static %}
+    <script src="{% static 'JS/CreatedJobs.js' %}"></script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Created jobs</title>
+  {% load static %}
+  <link rel="icon" href="{% static 'Images/logo2.png'%}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/navbar.css' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'CSS/CreatedJobs.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <div id="created-jobs">
+    {% for job in jobs %}
+    <div class="job">
+      {% load static %}
+      <img src="{{ job.image.url }}" alt="{{job.CompanyName}}" class="jobdisplayedimg">
+      <h2>{{ job.title }}</h2>
+      <h3>{{ job.CompanyName }}</h3>
+      <ul>
+        <li><span class="bold">Job ID: </span><span>{{job.ID}}</span></li>
+        <li><i class="fa-solid fa-location-dot"></i><span class="bold">Location: </span><span>{{job.Location}}</span>
+        </li>
+        <li><span class="bold">Work Type: </span><span>{{ job.WorkType }}</span></li>
+        <li><span class="bold">Created: </span><span>{{ job.created_at }}</span></li>
+        <li><i class="fa-solid fa-sack-dollar"></i><span class="bold">Salary: </span><span>{{job.salary}}</span></li>
+        <li><span class="bold">Years of Experience: </span><span>{{ job.YearsOfExperience }}</span></li>
+        <li><span class="bold">Job Status: </span><span>{% if job.JobStatus %}Opened{% else %}Closed{% endif %}</span>
+        </li>
+        <li><span class="bold">About the Job: </span><span>{{ job.description }}</span></li>
+      </ul>
+      <!-- <p class="editP"><i class="fa-solid fa-triangle-exclamation"></i>Please click on <span class="bold">Edit Job</span> to show the edits</p>
+            <button class="job-btn" class="goToEdit"><a href="EditJob.html">Go to Edit job<i class="fa-solid fa-arrow-up-right-from-square"></i></a></button> -->
+      <button class="job-btn"><a href="{% url 'edit_job' %}">Edit job<i
+            class="fa-regular fa-pen-to-square"></i></a></button>
+
+
+      <button class="delete-btn" onclick="" data-jobid="{{ job.ID }}">Delete Job<i
+          class="fa-regular fa-trash-can"></i></button>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="up-btn"><a href="#navbar">Go Up</a><i class="fa-solid fa-arrow-up"></i></button>
+  <!-- <h1>List of Jobs</h1>
+    <ul>
+
+
+        {% for job in jobs %}
+        <li>
+            <strong>Title:</strong> {{ job.title }} <br>
+            <strong>Salary:</strong> {{ job.salary }} <br>
+            <strong>Company:</strong> {{ job.CompanyName }} <br>
+            <strong>Job Status:</strong> {{ job.JobStatus }} <br>
+            <strong>Created At:</strong> {{ job.created_at }} <br>
+            <strong>Years of Experience:</strong> {{ job.YearsOfExperience }} <br>
+            <strong>Location:</strong> {{ job.Location }} <br>
+            <strong>Description:</strong> {{ job.description }} <br>
+            <strong>Work Type:</strong> {{ job.WorkType }} <br>
+            <strong>Image:</strong> <img src="{{ job.image.url }}" alt="{{ job.title }}"> <br>
+        </li>
+        {% endfor %} -->
+  </ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.delete-btn');
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', async function () {
+          const jobId = this.getAttribute('data-jobid');
+          const csrftoken = getCookie('csrftoken');
+
+          try {
+            const response = await fetch(`/delete_job/${jobId}/`, {
+              method: 'POST',
+              headers: {
+                'X-CSRFToken': csrftoken,
+              },
+            });
+
+            if (response.ok) {
+              const data = await response.json();
+              alert(data.message);
+              const jobDiv = this.closest('.job');
+              jobDiv.parentNode.removeChild(jobDiv);
+            } else {
+              console.error('Error:', response.statusText);
+              alert('Error:', response.statusText);
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Error: Unable to delete job');
+          }
+        });
+      });
+
+      function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+            }
+          }
+        }
+        return cookieValue;
+      }
+    });
+  </script>
+</body>
+
+</html>
+{% endblock content %}
