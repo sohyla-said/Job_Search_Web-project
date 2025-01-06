@@ -93,6 +93,6 @@
         <li>Application timestamp</li>
         <li>Status tracking</li>
     </ul>
-    <p>This project was developed as part of a university web development course, demonstrating the practical implementation of full-stack web development concepts using the Django framework.</p>
+    <p>This project was developed as part of a university web development course, demonstrating the implementation of full-stack web development concepts using the Django framework.</p>
 </body>
 </html>
